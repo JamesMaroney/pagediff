@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import os
 import glob
-import difflib
 from datetime import datetime
 from urllib.request import urlopen
 from urllib.parse import quote_plus
@@ -54,12 +53,4 @@ for url in urls:
   current_state = get_current_url_state(url)
   if last_state != current_state:
       print(f'  >> differences found!')
-      # print('===========================')
-      # for i,s in enumerate(difflib.ndiff(last_state, current_state)):
-      #   if s[0]==' ': continue
-      #   elif s[0]=='-':
-      #       print('Delete "{}" from position {}'.format(s[-1],i))
-      #   elif s[0]=='+':
-      #       print('Add "{}" to position {}'.format(s[-1],i))
-      # print('===========================')
       write_new_state(url, current_state)
