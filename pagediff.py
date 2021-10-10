@@ -1,14 +1,22 @@
 #!/usr/bin/env python3
 import os
 import glob
+from io import BytesIO
 from datetime import datetime
 from urllib.request import urlopen
 from urllib.parse import quote_plus
+
+import lxml
+from lxml.html.clean import Cleaner
 
 PAGES_FILE='pages.txt'
 ROOT_DIR=os.getcwd()
 PAGES_DIR=os.path.join(ROOT_DIR, 'pages')
 NOW=datetime.now().strftime("%Y-%b-%d_%H:%M:%S")
+
+cleaner = Cleaner()
+cleaner.javascript = True  # This is True because we want to activate the javascript filter
+cleaner.style = True  # This is True because we want to activate the styles & stylesheet filter
 
 def get_url_dir(url):
     return os.path.join(PAGES_DIR, quote_plus(url))
@@ -41,13 +49,11 @@ def write_new_state(url, state):
         FOUT.write(state)
 
 def states_differ(last_state, current_state):
-    last_state = (last_state.split(b'<body') + [b''])[1]
-    last_state = (last_state.split(b'</body') + [b''])[0]
-    current_state = (current_state.split(b'<body') + [b''])[1]
-    current_state = (current_state.split(b'</body') + [b''])[0]
+    last_state = lxml.html.tostring(cleaner.clean_html(lxml.html.parse(BytesIO(last_state))))
+    current_state = lxml.html.tostring(cleaner.clean_html(lxml.html.parse(BytesIO(current_state))))
     return last_state != current_state
 
-
+####### Main script
 
 with open(PAGES_FILE) as file:
   urls = file.readlines()
