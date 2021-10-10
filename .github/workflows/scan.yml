@@ -1,5 +1,6 @@
 name: scan
 on:
+  workflow_dispatch:
   schedule:
     - cron: "18 0 * * *" #runs at 00:18 UTC everyday
 
