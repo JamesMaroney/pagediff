@@ -15,17 +15,18 @@ def get_url_dir(url):
 
 def ensure_url_dir(url):
   dirname = get_url_dir(url)
-  print(f'  ensuring dir {dirname}')
-  os.makedirs(dirname, exist_ok=True)
+  if not os.path.isdir(dirname):
+      print(f'  creating dir {dirname}')
+      os.makedirs(dirname, exist_ok=True)
 
 def get_last_url_state(url):
     dirname = get_url_dir(url)
     captures = glob.glob(os.path.join(dirname, '*.html'))
-    if not captures: return ''
+    if not captures: return b''
 
     latest_capture = max(captures, key=os.path.getctime)
-    print(f'  >> {latest_capture}')
-    return open(latest_capture, 'rb').read() if latest_capture else ''
+    print(f'  >> loading latest capture: {latest_capture}')
+    return open(latest_capture, 'rb').read() if latest_capture else b''
 
 def get_current_url_state(url):
     # TODO: handle error
@@ -34,9 +35,17 @@ def get_current_url_state(url):
 
 def write_new_state(url, state):
     dirname = get_url_dir(url)
-    with open(os.path.join(dirname, f'{NOW}.html'), 'wb') as FOUT:
+    capture = os.path.join(dirname, f'{NOW}.html')
+    print(f'  >> writing new capture: {capture}')
+    with open(capture, 'wb') as FOUT:
         FOUT.write(state)
 
+def states_differ(last_state, current_state):
+    last_state = (last_state.split(b'<body') + [b''])[1]
+    last_state = (last_state.split(b'</body') + [b''])[0]
+    current_state = (current_state.split(b'<body') + [b''])[1]
+    current_state = (current_state.split(b'</body') + [b''])[0]
+    return last_state != current_state
 
 
 
@@ -51,6 +60,6 @@ for url in urls:
   ensure_url_dir(url)
   last_state = get_last_url_state(url)
   current_state = get_current_url_state(url)
-  if last_state != current_state:
+  if states_differ(last_state, current_state):
       print(f'  >> differences found!')
       write_new_state(url, current_state)
