@@ -19,12 +19,12 @@ cleaner.javascript = True  # This is True because we want to activate the javasc
 cleaner.style = True  # This is True because we want to activate the styles & stylesheet filter
 
 def get_capture_path(url):
-    return os.path.join(PAGES_DIR, f'{quote_plus(url)}.html')
+    return os.path.join(PAGES_DIR, url.lstrip('http://').lstrip('https://'))
 
-def ensure_pages_dir():
-  if not os.path.isdir(PAGES_DIR):
-      print(f'  creating dir {dirname}')
-      os.makedirs(PAGES_DIR, exist_ok=True)
+def ensure_dir(dir):
+  if not os.path.isdir(dir):
+      print(f'  creating dir {dir}')
+      os.makedirs(dir, exist_ok=True)
 
 def get_last_url_state(url):
     capture_path = get_capture_path(url)
@@ -39,6 +39,8 @@ def get_current_url_state(url):
 
 def write_new_state(url, state):
     capture = get_capture_path(url)
+    capture_dir = '/'.join(capture.split('/')[:-1])
+    ensure_dir(capture_dir)
     print(f'  >> writing new capture: {capture}')
     with open(capture, 'wb') as FOUT:
         FOUT.write(state)
@@ -58,7 +60,7 @@ with open(PAGES_FILE) as file:
 
 for url in urls:
   print(f'Handling :: {url}')
-  ensure_pages_dir()
+  ensure_dir(PAGES_DIR)
   last_state = get_last_url_state(url)
   current_state = get_current_url_state(url)
   if not last_state or states_differ(last_state, current_state):
