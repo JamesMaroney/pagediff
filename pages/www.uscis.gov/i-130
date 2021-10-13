@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"877b02039c",applicationID:"137833368"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1211.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12572986-2"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-12572986-2", {"groups":"default","anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<link rel="canonical" href="https://www.uscis.gov/i-130" />
+<meta name="description" content="Use this form if you are a U.S. citizen or lawful permanent resident (LPR) and you need to establish your relationship to an eligible relative who wishes to come to or remain in the United States permanently and get a Permanent Resident Card (also called a Green Card)." />
+<meta name="keywords" content="petition for alien relative, i-130, i 130, i130, 130, form i-130, form i 130, form i130, i-130 form, i 130 form, i130 form, i-130 instructions, i130 instructions, i 130 instructions, instructions for i130, instructions for i-130, instructions for i 130, i130 application form, i-130 application form, i 130 application form, i-130 application, i130 application, i 130 application, i-130 fee, i 130 fee, i130 fee, 1130, 1 130, 1-130" />
+<meta property="og:site_name" content="USCIS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.uscis.gov/i-130" />
+<meta property="og:title" content="Petition for Alien Relative" />
+<meta property="og:description" content="Use this form if you are a U.S. citizen or lawful permanent resident (LPR) and you need to establish your relationship to an eligible relative who wishes to come to or remain in the United States permanently and get a Permanent Resident Card (also called a Green Card)." />
+<meta property="og:image" content="https://www.uscis.gov/sites/default/files/images/social-media/OPA-SM_USCISonBlue_FB_1200x627_V1.png" />
+<meta property="article:published_time" content="2021-08-23" />
+<meta property="article:modified_time" content="2021-08-23" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Use this form if you are a U.S. citizen or lawful permanent resident (LPR) and you need to establish your relationship to an eligible relative who wishes to come to or remain in the United States permanently and get a Permanent Resident Card (also called a Green Card)." />
+<meta name="twitter:site" content="@USCIS" />
+<meta name="twitter:title" content="Petition for Alien Relative" />
+<meta name="twitter:url" content="https://www.uscis.gov/i-130" />
+<meta name="twitter:image" content="https://www.uscis.gov/sites/default/files/images/social-media/OPA-SM_USCISonBlue_TW_1024x512_V1.png" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://www.uscis.gov/i-130" />
+<link rel="alternate" hreflang="es" href="https://www.uscis.gov/es/i-130" />
+<link rel="revision" href="https://www.uscis.gov/i-130" />
+
+    <title>Petition for Alien Relative | USCIS</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_0wES4sBXsAYBbYt1omP9XaOU6MtGtP2qULII_1bCqZ8.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QytJOhDIzKHjsCDVeLEPrLtAzV2J0sJLqFi_fkVstdM.css" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_CzQ6gJUtS_Mg2vNBasOgXL8mFWyW6wCFYQ0nG3GDAsk.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" />
+
+    <script src="/libraries/fontawesome/js/all.min.js?v=5.12.0" defer></script>
+
+  </head>
+  <body>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+
+
+
+<div id="page-wrapper">
+  <header id="header">
+        <div class="header__main-skip-nav">
+      <a href="#main-content" class="visually-hidden focusable">Skip to main content</a>
+    </div>
+          <div id="header-first">
+        <div class="content-container">
+            <div class="region region-header_first">
+    
+<div id="block-alertmessage">
+  
+    
+                  <div class="clearfix text-formatted field field--name-body field__item"><div>
+<div class="hidden" id="preview-message">This is the USCIS preview website. Visit <a class="link-decorate" href="https://www.uscis.gov">uscis.gov</a> for the official USCIS site.</div>
+
+<div class="special-msg"><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="c9e523d5-9539-4a0a-b923-0490925df3bc" href="/about-us/uscis-response-to-covid-19">USCIS Response to Coronavirus (COVID-19)</a></div>
+</div>
+</div>
+      
+  </div>
+  </div>
+
+        </div>
+      </div>
+        <div id="header-second">
+      <div class="content-container header__items">
+          <div class="region region-header_second_left">
+      <div id="block-officialsitelanguage">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div id="header-flag">
+<div id="header-flag-img"><img alt="U.S. flag" class="header-flag-icon" src="/sites/default/files/images/site/USFlag-Icon-2x.png" /></div>
+
+<div id="official-text">An official website of the United States government    <a class="link-decorate" href="#" id="us-gov-desc">Here's how you know</a></div>
+</div>
+</div>
+      
+      </div>
+
+  </div>
+
+          <div class="region region-header_second_right">
+      <div class="language-switcher-language-url" id="block-languageswitcher">
+    
+        
+          <div id="alt-lang-link"><span lang="es"><a href="/es/i-130" class="language-link" hreflang="es" data-drupal-link-system-path="node/41208">Español</a></span></div>
+      </div>
+  <div id="block-utilitylinks">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div id="header-util-links"><!--<a class="util-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="7bb50634-6a64-46c8-bf6c-98a08b657c56" href="/node/41573">Contact Us</a>-->
+  <div class="inline-sep header-util-links__sep"><span></span>
+  </div>
+  <a class="util-link last" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="74a4e61d-1c61-4081-9529-7fe905db85d1" href="/tools/multilingual-resource-center"><i class="fal fa-globe" role="presentation"></i> Multilingual Resources</a>
+</div>
+</div>
+      
+      </div>
+
+  </div>
+
+      </div>
+    </div>
+
+          <div id="primary-header">
+        <div class="content-container">
+            <div class="region region-header">
+      <div id="block-howyouknowdescription">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div class="howyouknow-header-block" id="howyouknow-official">
+<div class="howyouknow-header-block__icon"><img alt="Official Government Website" class="howyouknow-header-block__icon__img" src="/sites/default/files/images/site/icon-dot-gov@2x.png" /></div>
+
+<div>
+<p><strong>Official websites use .gov</strong><br />
+A <strong>.gov</strong> website belongs to an official government organization in the United States.</p>
+</div>
+</div>
+
+<div class="howyouknow-header-block" id="howyouknow-secure">
+<div class="howyouknow-header-block__icon"><img alt="Secure Website" class="howyouknow-header-block__icon__img" src="/sites/default/files/images/site/icon-https@2x.png" /></div>
+
+<div>
+<p><strong>Secure .gov websites use HTTPS</strong><br />
+A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__lock-image" role="img" style="height:1.5ex;width:1.21875ex;" viewbox="0 0 52 64" xmlns="http://www.w3.org/2000/svg"><title></title><desc>A locked padlock </desc><path d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z" fill="#000000" fill-rule="evenodd"></path></svg> ) or <strong>https://</strong> means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.</p>
+</div>
+</div>
+</div>
+      
+      </div>
+
+  </div>
+
+        </div>
+      </div>
+    
+    <div id="header-third">
+      <div class="header-third__first menu__closed">
+        <div class="content-container">
+          <div class="menu-toggle menu-toggle--header">
+            <button type="button" class="menu-toggle__link-horizontal highlight-strong" aria-label="Open Menu" data-alt="Close Menu">
+              <i class="fal fa-bars"></i><span class="menu-toggle__text">Menu</span>
+            </button>
+          </div>
+            <div class="region region-header_third_first">
+      <div id="block-uscis-design-branding">
+    
+        
+          <div id="home-logo">
+      <a href="/" rel="home">
+        <img src="/sites/default/files/images/site/DHS_cis_W_1_T.svg" alt="U.S. Department of Homeland Security Seal, U.S. Citizenship and Immigration Services" />
+      </a>
+    </div>
+      
+  </div>
+  <div id="block-searchplaceholder">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div id="site-search">
+    <!-- Google Search box -->
+  <div class="hide-print">
+    <script async="" src="https://cse.google.com/cse.js?cx=a2ef8e2528658124e">
+<!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+    
+//--><!]]]]]]><![CDATA[><![CDATA[>
+
+//--><!]]]]><![CDATA[>
+
+//--><!]]>
+</script><div class="gcse-searchbox-only" data-resultsurl="/search"> 
+    </div>
+  </div>
+  <!--<form accept-charset="UTF-8" action="https://search.uscis.gov/search" id="search-form" method="get" role="search">
+    <input name="utf8" type="hidden" value="✓" /> 
+    <input id="affiliate" name="affiliate" type="hidden" value="uscis_gov" />
+    <div class="input-group">
+      <input autocomplete="off" class="usagov-search-autocomplete ui-autocomplete-input fsrVisible input-group__field" data-lang="en" maxlength="100" name="query" placeholder="Search our Site" title="Search our Site" type="text" />
+      <div class="input-group__btn--icon">
+        <button aria-label="Submit search" class="btn-icon btn--search-submit" id="header-btn-search-submit" type="submit"><i aria-labelledby="header-btn-search-submit" class="far fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>-->
+  <div class="sign-in-link">
+    <div class="inline-sep sign-in-link__sep"><span></span>
+    </div>
+    <div class="sign-in--drop-down__toggle">
+      <div class="sign-in--button">
+        <div class="highlight-strong font-ssp-semibold sign-in--button__text" tabindex="0">Sign In  <i class="fas fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
+    <div class="sign-in--drop-down hidden-desktop">
+      <div class="sign-in__menu-header">Access USCIS online services.
+      </div>
+      <div>
+        <ul class="sign-in-links"><li class="sign-in__menu-item"><a data-entity-substitution="canonical" data-entity-type="node" href="https://my.uscis.gov/authenticate/saml/init" data-lang="en">Sign In</a></li>
+          <li class="sign-in__menu-item"><a data-entity-substitution="canonical" data-entity-type="node" href="https://my.uscis.gov/authenticate/saml/sign_up" data-lang="en">Create Account</a></li>
+        </ul></div>
+    </div>
+  </div>
+</div>
+</div>
+      
+      </div>
+
+  </div>
+
+        </div>
+      </div>
+
+      <div class="content-container header-third__second">
+          <div class="region region-header_third_second">
+      <div id="block-signinlink">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div class="sign-in-link sign-in-link__mobile"><a class="my-uscis-link font-ssp-semibold" data-entity-substitution="canonical" data-entity-type="node" href="https://my.uscis.gov/authenticate/saml/init" data-lang="en">Sign In </a></div>
+
+<div class="sign-in-link sign-in-link__mobile"><a class="my-uscis-link font-ssp-semibold" data-entity-substitution="canonical" data-entity-type="node" href="https://my.uscis.gov/authenticate/saml/sign_up" data-lang="en">Create Account</a></div>
+</div>
+      
+      </div>
+
+  </div>
+
+      </div>
+
+      <div id="primary-nav">
+          <div class="region region-navigation">
+    <nav aria-labelledby="block-horizontal-menu" id="block-horizontal">
+            
+  <div  class="visually-hidden" id="block-horizontal-menu">Horizontal Menu</div>
+  
+
+        
+
+                      <ul class="menu--horizontal menu" data-level="0">
+                          <li class="menu__item">
+        <a href="/topics" class="nav__link" data-drupal-link-system-path="node/93148">Topics</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/forms/forms" class="nav__link" title="Forms" data-drupal-link-system-path="node/88393">Forms</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/newsroom" class="nav__link" title="News" data-drupal-link-system-path="node/4153">Newsroom</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/citizenship" class="nav__link" title="Citizenship" data-drupal-link-system-path="node/88387">Citizenship</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/green-card" class="nav__link" title="Green Card" data-drupal-link-system-path="node/42293">Green Card</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/laws-and-policy" class="nav__link" data-drupal-link-system-path="node/41528">Laws</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/tools" class="nav__link" title="Tools" data-drupal-link-system-path="node/50433">Tools</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+  <div id="block-mobilemenulinks">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><ul class="mobile-menu-links"><li class="item"><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="7bb50634-6a64-46c8-bf6c-98a08b657c56" href="/about-us/contact-us">Contact us</a></li>
+	<li class="item"><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="74a4e61d-1c61-4081-9529-7fe905db85d1" href="/tools/multilingual-resource-center">Multilingual Resources</a></li>
+	<li class="item"><a href="#" onclick="NITAgent.ShowAgent('GlobalLaunchPoint'); return false;">Ask Emma</a></li>
+</ul></div>
+      
+      </div>
+
+  </div>
+
+      </div>
+    </div>
+  </header>
+
+      
+  
+  <div class="content-container">
+                  <div class="highlighted">  <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+</div>
+            </div>
+
+  <div id="content-wrapper" class="two-col">
+    <div class="content-container">
+              
+      
+              <div id="content-info-first">
+                        <div class="region region-content_info_first">
+    
+  </div>
+
+                  </div>
+      
+              
+      
+      <div class="main-content-wrapper container">
+                              <aside id="sidebar-first" class="hide-print">
+                <div class="region region-sidebar_first">
+    <nav aria-labelledby="block-uscis-design-mainnavigation-menu" id="block-uscis-design-mainnavigation">
+            
+  <div  class="visually-hidden" id="block-uscis-design-mainnavigation-menu">Main navigation</div>
+  
+
+        
+<a href="#main-content" class="visually-hidden focusable">Skip to main content</a>
+
+      <ul class="menu--main leftnav-menu" data-level="0">
+          <li class="menu__item-title leftnav-menu__item leftnav-menu__item--0 has-sub-items" data-id="id33859"><div class="leftnav-menu__link-group leftnav-menu__link-group--title"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms" class="leftnav-menu__link leftnav-menu__title" data-drupal-link-system-path="node/88393">Forms</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button leftnav-menu__link-group-toggle--title hidden-desktop" title="Toggle menu for Forms" aria-controls="id33859" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--1 hidden-mobile hidden-tablet" data-level="1" id="id33859"><li class="leftnav-menu__item leftnav-menu__item--1 leftnav-menu__active-trail" data-id="id12911"><div class="leftnav-menu__active-trail__border"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/all-forms" class="leftnav-menu__link" data-drupal-link-system-path="node/22983">All Forms</a></div></div></div></li><li class="leftnav-menu__item leftnav-menu__item--1" data-id="id33880"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/explore-my-options" class="leftnav-menu__link" data-drupal-link-system-path="node/83278">Explore My Options</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--1 has-sub-items" data-id="id13977"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance" class="leftnav-menu__link" data-drupal-link-system-path="node/43396">Filing Guidance</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button" title="Toggle menu for Filing Guidance" aria-controls="id13977" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--2 hidden" data-level="2" id="id13977"><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25685"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/form-filing-tips" class="leftnav-menu__link" data-drupal-link-system-path="node/44654">Form Filing Tips</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id34153"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-information/forms-by-mail" class="leftnav-menu__link" data-drupal-link-system-path="node/73964">Forms By Mail</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25688"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/how-to-make-an-expedite-request" class="leftnav-menu__link" data-drupal-link-system-path="node/43424">Expedite Request</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id17616"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/preparing-for-your-biometric-services-appointment" class="leftnav-menu__link" data-drupal-link-system-path="node/45471">Preparing for Your Biometric Services Appointment</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id34486"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/addresschange" class="leftnav-menu__link" data-drupal-link-system-path="node/43677">How to Change Your Address</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25697"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/how-to-track-delivery-of-your-green-card-employment-authorization-document-ead-and-travel-document" class="leftnav-menu__link" data-drupal-link-system-path="node/65797">Card Delivery Tracking</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25694"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/paperwork-reduction-act" class="leftnav-menu__link" data-drupal-link-system-path="node/44858">Paperwork Reduction Act</a></div></div></li></ul></li><li class="leftnav-menu__item leftnav-menu__item--1 has-sub-items" data-id="id13068"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees" class="leftnav-menu__link" data-drupal-link-system-path="node/41953">Filing Fees</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button" title="Toggle menu for Filing Fees" aria-controls="id13068" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--2 hidden" data-level="2" id="id13068"><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id34168"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/g-1055" class="leftnav-menu__link" data-drupal-link-system-path="node/52500">Fee Schedule</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id381"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="https://www.uscis.gov/feecalculator" class="leftnav-menu__link" data-drupal-link-system-path="node/71802">Fee Calculator</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2 has-sub-items" data-id="id20887"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee" class="leftnav-menu__link" data-drupal-link-system-path="node/43798">USCIS Immigrant Fee</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button" title="Toggle menu for USCIS Immigrant Fee" aria-controls="id20887" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--3 hidden" data-level="3" id="id20887"><li class="leftnav-menu__item leftnav-menu__item--3" data-id="id34171"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee/uscis-immigrant-fee-payment-guide" class="leftnav-menu__link" data-drupal-link-system-path="node/48597">USCIS Immigrant Fee Payment Guide</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--3" data-id="id25717"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee/how-to-pay-the-uscis-immigrant-fee" class="leftnav-menu__link" data-drupal-link-system-path="node/47770">How to Pay the USCIS Immigrant Fee</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--3" data-id="id25720"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee/identity-verification-and-the-uscis-immigrant-fee" class="leftnav-menu__link" data-drupal-link-system-path="node/56750">Identity Verification and the USCIS Immigrant Fee</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--3" data-id="id25723"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee/immigrant-fee-payment-tips-on-finding-your-a-number-and-dos-case-id" class="leftnav-menu__link" data-drupal-link-system-path="node/47276">Tips on Finding Your A-Number and DOS Case ID</a></div></div></li></ul></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25702"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/forms-processed-at-uscis-lockbox-facilities" class="leftnav-menu__link" data-drupal-link-system-path="node/65609">Forms Processed at USCIS Lockbox Facilities</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25705"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/poverty-guidelines" class="leftnav-menu__link" data-drupal-link-system-path="node/73474">Poverty Guidelines</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25708"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/additional-information-on-filing-a-fee-waiver" class="leftnav-menu__link" data-drupal-link-system-path="node/50963">Fee Waiver Guidance</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25711"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/additional-information-on-filing-a-reduced-fee-request" class="leftnav-menu__link" data-drupal-link-system-path="node/53942">Additional Information on Filing a Reduced Fee Request</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25714"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/pay-with-a-credit-card" class="leftnav-menu__link" data-drupal-link-system-path="node/49829">Pay With a Credit Card</a></div></div></li></ul></li><li class="leftnav-menu__item leftnav-menu__item--1 has-sub-items" data-id="id13074"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-updates" class="leftnav-menu__link" data-drupal-link-system-path="node/50444">Forms Updates</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button" title="Toggle menu for Forms Updates" aria-controls="id13074" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--2 hidden" data-level="2" id="id13074"><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25726"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-updates/uscis-2d-barcode-requirements" class="leftnav-menu__link" data-drupal-link-system-path="node/46619">2D Barcode Requirements</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id40057"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-updates/lockbox-filing-location-updates" class="leftnav-menu__link" data-drupal-link-system-path="node/93046">Lockbox Filing Location Updates</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25729"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-updates/workload-transfer-updates" class="leftnav-menu__link" data-drupal-link-system-path="node/50889">Workload Transfer Updates</a></div></div></li></ul></li><li class="leftnav-menu__item leftnav-menu__item--1" data-id="id13979"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/department-of-state-ds-and-other-non-uscis-forms" class="leftnav-menu__link" data-drupal-link-system-path="node/46342">Department of State (DS) Forms and Other Non-USCIS Forms</a></div></div></li></ul></li>    
+    </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+            </aside>
+                  
+        <div id="content" class="is-node two-col">
+                        <div class="region region-breadcrumb">
+      <div id="block-uscis-design-breadcrumbs">
+    
+        
+            <nav class="breadcrumb" aria-labelledby="system-breadcrumb">
+    <div id="system-breadcrumb" class="visually-hidden">Breadcrumb</div>
+    <ol class="nav nav--crumbs">
+              <li class="is-link nav__crumb">
+          <a class="link" href="/">Home</a><span class="nav__sep"></span>        </li>
+              <li class="is-link nav__crumb">
+          <a class="link" href="/forms/forms">Forms</a><span class="nav__sep"></span>        </li>
+              <li class="is-link nav__crumb">
+          <a class="link" href="/forms/all-forms">All Forms</a><span class="nav__sep"></span>        </li>
+              <li class="last nav__crumb">
+          <span class="nav__text">Petition for Alien Relative</span>        </li>
+          </ol>
+  </nav>
+
+      </div>
+
+  </div>
+
+          
+          <div id="main-content"></div>
+          <main id="main">
+                          
+            
+            <div id="page-content">
+                                <div class="region region-content">
+      <div id="block-uscis-design-content">
+    
+        
+          
+<article class="node node--type-immigration-form">
+      <div class="container container--main">
+            
+              
+          <h1 class="page-title">
+              I-130, <span>Petition for Alien Relative</span>          </h1>
+        
+      
+                    
+              <div>
+            <div class="content-section">
+                <div class="clearfix text-formatted field field--name-body field__item"><div class="alert-message">
+<div class="messages messages--info">
+<div class="messages__text">
+<p><strong>Alert:</strong> On Nov. 2, 2020, the U.S. District Court for the Northern District of Illinois vacated the Inadmissibility on Public Charge Grounds final rule (84 Fed. Reg. 41,292 (Aug. 14, 2019), as amended by Inadmissibility on Public Charge Grounds; Correction, 84 Fed. Reg. 52,357 (Oct. 2, 2019)) (Public Charge Final Rule) nationwide. That decision was stayed by the U.S. Court of Appeals for the Seventh Circuit. On March 9, 2021, the Seventh Circuit lifted its stay, and the U.S. District Court for the Northern District of Illinois’ order vacating the Public Charge Final Rule went into effect.</p>
+
+<p>We immediately stopped applying the Public Charge Final Rule to all pending applications and petitions that would have been subject to the rule. USCIS continues to apply the public charge inadmissibility statute, including consideration of the statutory minimum factors in the totality of the circumstances, in accordance with the 1999 <a href="https://www.federalregister.gov/documents/1999/05/26/99-13202/field-guidance-on-deportability-and-inadmissibility-on-public-charge-grounds">Interim Field Guidance</a>, which was in place before the Public Charge Final Rule was implemented on Feb. 24, 2020, to the adjudication of any application for adjustment of status. In addition, USCIS will no longer apply the separate, but related, “public benefits condition” to applications or petitions for extension of nonimmigrant stay and change of nonimmigrant status.</p>
+
+<p>On or after March 9, 2021, applicants and petitioners should not provide information required solely by the Public Charge Final Rule. That means that applicants for adjustment of status should not provide the Form I-944, Declaration of Self-Sufficiency, or any evidence or documentation required on that form with their Form I-485. Applicants and petitioners for extension of nonimmigrant stay and change of nonimmigrant status should not provide information related to the receipt of public benefits on Form I-129 (Part 6), Form I-129CW (Part 6), Form I-539 (Part 5), and Form I-539A (Part 3).</p>
+
+<p>If an applicant or petitioner has already provided such information, and USCIS adjudicates the application or petition on or after March 9, 2021, we will not consider any information provided that relates solely to the Public Charge Final Rule, including, for example, information provided on the Form I-944, evidence or documentation submitted with Form I-944, and information on the receipt of public benefits on Form I-129 (Part 6), Form I-129CW (Part 6), Form I-539 (Part 5), and Form I-539A (Part 3).</p>
+
+<p>If you received a Request for Evidence (RFE) or Notice of Intent to Deny (NOID) requesting information that is solely required by the Public Charge Final Rule, including but not limited to Form I-944, and your response is due on or after March 9, 2021, you do not need to provide the information solely required by the Public Charge Final Rule. However, you need to respond to the aspects of the RFE or NOID that otherwise pertain to the eligibility for the immigration benefit you are seeking. If USCIS requires additional information or evidence to make a public charge inadmissibility determination under the statute and consistent with the 1999 <a href="https://www.federalregister.gov/documents/1999/05/26/99-13202/field-guidance-on-deportability-and-inadmissibility-on-public-charge-grounds">Interim Field Guidance</a>, we will send you another RFE or NOID. For information about the relevant court decisions, please see the <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="daf856e3-e1ee-4f39-a12b-165c931c9cb9" href="/green-card/green-card-processes-and-procedures/public-charge/inadmissibility-on-public-charge-grounds-final-rule-litigation">litigation summary</a>.</p>
+
+<p>USCIS published new form editions for affected forms. Starting April 19, 2021, we will only accept the 03/10/21 editions. Until then, you can also use the prior editions specified on each form webpage.</p>
+</div>
+</div>
+</div>
+
+<p>Use this form if you are a U.S. citizen or lawful permanent resident (LPR) and you need to establish your relationship to an <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="5f723ef9-95bb-4a5b-8edd-745f034a66d5" href="/green-card/green-card-eligibility-categories">eligible relative</a> who wishes to come to or remain in the United States permanently and get a Permanent Resident Card (also called a Green Card).</p>
+
+<p>		
+	<a href="https://myaccount.uscis.gov" class="btn btn--anchor shortcode-url-link" aria-label="File Online, Petition for Alien Relative">File Online</a></p>
+
+<div data-embed-button="images" data-entity-embed-display="view_mode:media.full" data-entity-type="media" data-entity-uuid="43762ac5-b531-4360-8821-e8e88cb505d6" data-langcode="en" class="align-center embedded-entity"><article class="media media--type-image media--view-mode-full"><div class="field field--name-field-media-image field__item">  <img src="/sites/default/files/images/article-about-uscis/USCIS_N-400_Online_Filing_Benefits_760_V6_En%402x.png" width="1520" height="890" alt="Image of computer with a list of Online Filing Benefits" loading="lazy" class="image" /></div>
+      
+  </article></div>
+<p>Submitting Form I-130 is the first step in helping an eligible relative apply to immigrate to the United States and get Green Card. The filing or approval of this petition does not give your relative any immigration status or benefit.</p>
+
+<p>We will generally approve your Form I-130 if you can establish a relationship between you and your relative that qualifies them to immigrate to the United States. Generally, once we approved the petition, your relative may apply to become a lawful permanent resident. If your relative is already in the United States and a visa is available, they may be eligible to get their Green Card by filing Form I-485, Application to Register Permanent Residence or Adjust Status</p>
+
+<p>Certain relatives must wait until a visa number is available before they can apply. If your relative qualifies as an immediate relative, an immigrant visa always is available.</p>
+
+<ul><li>If your relative is not eligible to get their Green Card in the United States by filing Form I-485, or if your relative lives outside the United States, they may apply for an immigrant visa with the U.S. Department of State at the U.S. Embassy or Consulate in their country. For more information on ineligibility, please visit our <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="5f723ef9-95bb-4a5b-8edd-745f034a66d5" href="/green-card/green-card-eligibility-categories">Green Card</a> page.</li>
+</ul><p><strong>How to Report Suspected Marriage Fraud</strong>: We encourage you to report suspected immigration benefit fraud and abuse, including marriage fraud. For more information, please visit our <a href="https://www.uscis.gov/report-fraud">Reporting Fraud</a> page.</p>
+
+<p><strong>Help for Immigration Crime Victims</strong><br />
+Different types of support are available through ICE’s <a href="https://www.ice.gov/voice">Victims of Immigration Crime Engagement (VOICE) Office</a>.</p>
+
+<p><strong>Help for Victims of Abuse</strong><br />
+If you are a battered spouse, child, or parent, you may be eligible to file a petition for yourself independent from your U.S. citizen or LPR abuser. For more information, go to the <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e5e7ffc2-cfed-4b08-8a85-f51c52fcdce0" href="/humanitarian/battered-spouse-children-and-parents">Battered Spouse, Children, and Parents</a> page.</p>
+</div>
+      
+  </div>    <section class="content-section">
+      <h2>What This Form Can Help You Do</h2>
+      <div>
+        <div class="views-element-container"><div class="content-section--items-list content-section__items-list content-items-list">    <div class="views-row first"><div class="views-field views-field-title"><span class="field-content"><a href="/forms/explore-my-options/family-based-petition-for-an-adopted-child" hreflang="en">Family Based Petition for an Adopted Child</a>
+</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forms/explore-my-options/green-card-for-family-members-of-a-permanent-resident" hreflang="en">Green Card for Family Members of a Permanent Resident</a>
+</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forms/explore-my-options/us-citizen-petition-for-a-preference-relative-to-become-a-lawful-permanent-resident" hreflang="en">U.S. Citizen Petition for a Preference Relative to Become a Lawful Permanent Resident</a>
+</span></div></div>
+    <div class="views-row"><div class="views-field views-field-title"><span class="field-content"><a href="/forms/explore-my-options/us-citizen-petition-for-a-spouse" hreflang="en">U.S. Citizen Petition for a Spouse</a>
+</span></div></div>
+    <div class="views-row last"><div class="views-field views-field-title"><span class="field-content"><a href="/forms/explore-my-options/us-citizen-petition-for-an-immediate-relative-to-become-a-lawful-permanent-resident" hreflang="en">U.S. Citizen Petition for an Immediate Relative to Become a Lawful Permanent Resident</a>
+</span></div></div>
+</div>
+</div>
+
+      </div>
+    </section>
+  
+  
+  <section class="content-section">
+    <h2>Form Details</h2>            <div class="accordion content-accordion"><div class="accordion__header" tabindex="0">
+            Forms and Document Downloads
+          </div><div class="accordion__panel"><div class="content-items-list files-listing files-listing--icons"><div class="field field--name-field-attached-files field__items"><div class="field__item"><article class="media media--type-document media--view-mode-linked-file"><div class="field field--name-field-media-file field__item"><span class="file file--mime-application-pdf file--application-pdf"><a href="https://www.uscis.gov/sites/default/files/document/forms/i-130.pdf" type="application/pdf" title="i-130.pdf">Form I-130  <span class="extra-info file-ext-info">(PDF, 674.56 KB)</span></a></span></div></article></div><div class="field__item"><article class="media media--type-document media--view-mode-linked-file"><div class="field field--name-field-media-file field__item"><span class="file file--mime-application-pdf file--application-pdf"><a href="https://www.uscis.gov/sites/default/files/document/forms/i-130instr.pdf" type="application/pdf" title="i-130instr.pdf">Instructions for Form I-130  <span class="extra-info file-ext-info">(PDF, 258.23 KB)</span></a></span></div></article></div><div class="field__item"><article class="media media--type-document media--view-mode-linked-file"><div class="field field--name-field-media-file field__item"><span class="file file--mime-application-pdf file--application-pdf"><a href="https://www.uscis.gov/sites/default/files/document/forms/i-130a.pdf" type="application/pdf" title="i-130a.pdf">Form I-130A, Supplemental Information for a Spouse Beneficiary  <span class="extra-info file-ext-info">(PDF, 1.02 MB)</span></a></span></div></article></div></div></div></div><div class="accordion__header" tabindex="0">
+            Edition Date
+          </div><div class="accordion__panel"><div class="views-element-container"><div class="container container--views forms-updates-listing block-2 forms-updates-listing-block_2 js-view-dom-id-b46957f22975dd8f6ba9bd6b0c20eb88e12815d0bffed34d6235bff055a7b086 hide-view-label"><div class="views-scroll-marker"></div><div class="first last"><p>07/20/21<span class="edition-date-period">.</span> Starting 10/26/21, we will only accept the 7/20/21 edition. Until then, you can use the 2/13/19 edition. You can find the edition date at the bottom of the page on the form and instructions.</p></div></div></div><div><div class="clearfix text-formatted field field--name-body field__item"><p>Dates are listed in mm/dd/yy format.</p></div></div></div><div class="accordion__header" tabindex="0">
+            Where to File
+          </div><div class="accordion__panel"><p>You have two options for filing your Form I-130 petition with USCIS: </p><p>•    Online; or<br />
+•    By mail (paper). </p><p>The filing location for your Form I-130 depends on where you live and if you are filing <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="6d9a13a3-f3c9-4773-b112-0015c55ae4dd" href="/i-485">Form I-485, Application to Register Permanent Residence or Adjust Status</a>, at the same time (this is called “concurrent filing”).</p><p><strong>Filing Your Form I-130 Online</strong><br />
+The first step is to <a data-entity-substitution="canonical" data-entity-type="node" href="https://my.uscis.gov/authenticate/saml/sign_up" data-lang="en">create an account</a>. To learn more, visit our <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="4235a220-100e-455f-8772-87d4e192b0f4" href="/file-online/how-to-create-a-uscis-online-account">How to Create a USCIS Online Account </a>page.</p><p>You can file Form I-130 online even if your relative is in the United States and will file Form I-485 by mail. Once you submit your Form I-130 online, we will send a receipt notice to your USCIS online account. Provide a copy of the receipt notice to your relative to include in their Form I-485 packet.<br />
+ <br />
+You cannot file your Form I-130 online if you are applying for a fee waiver.</p><p>You cannot file Form I-485 or Form I-129F online at this time. Please see our <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="6d9a13a3-f3c9-4773-b112-0015c55ae4dd" href="/i-485">Form I-485</a> and <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="509a1c79-8aca-4a76-a3d3-e78022ecf69f" href="/i-129f">Form I-129F</a> pages for current filing information, and refer to the form instructions for specific instructions on completing each of these forms. We will only accept and adjudicate forms that have been properly filed. We will not accept or adjudicate any Form I-485 or I-129F included as supporting evidence for a Form I-130 that was filed online.<br /><br /><strong>Filing Your Form I-130 By Mail</strong><br /><strong>If you reside in the United States</strong>, file at the Chicago, Dallas, or Phoenix Lockbox, depending on where you live and whether your relative is also concurrently filing Form I-485. For a complete list of addresses, visit our <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="84e3863d-75fe-4f1a-b8d0-a94e39835f46" href="/i-130-addresses">Direct Filing Addresses for Form I-130</a> page.</p><p><strong>If you reside outside of the United States, you may:</strong></p><ul><li>File at the USCIS Dallas Lockbox facility (see our <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="84e3863d-75fe-4f1a-b8d0-a94e39835f46" href="/i-130-addresses">Direct Filing Addresses for Form I-130</a> page for the address);</li><li>File online using the USCIS website; or</li><li>Request to file at the U.S. Embassy or Consulate in certain limited circumstances, as described in <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e8b95647-0aa4-4321-a38d-15c865790de8" href="/policy-manual/volume-6-part-b-chapter-3">USCIS Policy Manual, Volume 6, Part B, Chapter 3,</a> if you are a U.S. citizen and you are filing your Form I-130 for your immediate relative (your spouse, your unmarried child under the age of 21, or your parent (if you are 21 years of age or older)). For a list of U.S. Embassies and Consulates, go to the <a href="https://travel.state.gov" title="travel.state.gov">Department of State’s website</a>.</li></ul><p><strong>Filing Tips for Form I-130, Petition for Alien Relative</strong></p><p>Complete <strong>all sections</strong> of the form. We will reject the form if these fields are missing:</p><ul><li>Part 1 – Relationship</li><li>Part 2 – Information About You
+	<ul><li>Your Full Name</li><li>Date of Birth</li><li>Mailing Address</li><li>Your Marital Information</li></ul></li><li>Part 4 – Information About Beneficiary
+	<ul><li>Beneficiary Full Name</li><li>Date of Birth</li><li>Beneficiary’s Physical Address</li><li>Beneficiary’s Marital Information</li></ul></li></ul><p><strong>Don’t forget to sign your form!  We will reject any unsigned form.</strong></p></div><div class="accordion__header" tabindex="0">
+            Filing Fee
+          </div><div class="accordion__panel"><div class="field field--name-field-form-fee field__item">$535.</div><div class="clearfix text-formatted field field--name-field-formatted-long-2 field__item"><p>You may pay the fee with a money order, personal check, or cashier’s check. When filing at a USCIS Lockbox facility, you may also <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="a9ae04fe-2d65-4c53-8473-f6f59ae15aff" href="/forms/filing-fees/pay-with-a-credit-card">pay by credit card</a> using <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="5e3d5a4e-a176-4696-984e-46e629ea4ee4" href="/g-1450">Form G-1450, Authorization for Credit Card Transactions</a>. If you pay by check, you must make your check payable to the U.S. Department of Homeland Security. Service centers are not able to process credit card payments.</p><p><strong>When you send a payment, you agree to pay for a government service. Filing and biometric service fees are final and non-refundable, regardless of any action we take on your application, petition, or request, or if you withdraw your request.</strong> Use our <a href="https://www.uscis.gov/node/71802">Fee Calculator</a> to help determine your fee.</p></div></div><div class="accordion__header" tabindex="0">
+            Checklist of Required Initial Evidence (for informational purposes only)
+          </div><div class="accordion__panel"><p>Please do not submit this checklist with your Form I-130 (and Form I-130A, if required). It is an optional tool to use as you prepare your form, but does not replace statutory, regulatory, and form instruction requirements. We recommend that you review these requirements before completing and submitting your form. <strong>Do not send original documents unless specifically requested in the form instructions or applicable regulations.</strong></p><p>If you submit any documents (copies or original documents, if requested) in a foreign language, you must include a full English translation along with a certification from the translator verifying that the translation is complete and accurate, and that they are competent to translate from the foreign language to English.</p><p><strong>Did you provide the following?</strong></p><ul><li>Evidence of U.S. citizenship, lawful permanent residence, or U.S. national status:
+	<ul><li>A copy of your birth certificate, issued by a civil registrar, vital statistics office, or other civil authority showing you were born in the United States; </li><li>A copy of your naturalization or citizenship certificate issued by USCIS or the former Immigration and Naturalization Service (INS); </li><li>A copy of Form FS-240, Consular Report of Birth Abroad (CRBA), issued by a U.S. Embassy or U.S. Consulate; </li><li> A copy of your unexpired U.S. passport; </li><li>An original statement from a U.S. consular officer verifying you are a U.S. citizen with a valid passport; or</li><li>A copy of the front and back of your Permanent Resident Card (also known as a Green Card or a Form I-551).</li></ul></li><li>Evidence of family relationship with one of the following (see form instructions for more detailed guidance):
+	<ul><li>Spouse: A copy of your marriage certificate
+		<ul><li>Evidence you or your spouse terminated any prior marriages (if applicable)</li></ul></li><li>Child: A copy of your child’s birth certificate(s).</li><li>Parent: A copy of your birth certificate.</li><li>Brother/Sister: A copy of the birth certificate for you and your sibling.</li></ul></li><li>Evidence of the bona fides of the marriage, if petitioning for a spouse:
+	<ul><li>Documentation showing joint ownership of property;</li><li>A lease showing joint tenancy of a common residence, meaning you both live at the same address together;</li><li>Documentation showing that you and your spouse have combined your financial resources;</li><li>Birth certificates of children born to you and your spouse together;</li><li>Affidavits sworn to or affirmed by third parties having personal knowledge of the bona fides of the marital relationship. Each affidavit must contain the full name and address of the person making the affidavit; date and place of birth of the person making the affidavit; and complete information and details explaining how the person acquired their knowledge of your marriage; and</li><li> Any other relevant documentation to establish that there is an ongoing marital union.</li></ul></li><li>Proof of legal name change (if applicable); and </li><li>Two passport-style photographs (if applicable).</li></ul><p><strong>If you are filing Form I-130 for your adopted child</strong></p><ul><li>Evidence of U.S. citizenship:
+	<ul><li>A copy of your birth certificate, issued by a civil registrar, vital statistics office, or other civil authority showing you were born in the United States; </li><li>A copy of your naturalization citizenship certificate issued by USCIS or the former Immigration and Naturalization Service (INS); </li><li>A copy of Form FS-240, Consular Report of Birth Abroad (CRBA), issued by a U.S. Embassy or U.S. Consulate; </li><li>A copy of your unexpired U.S. passport; or </li><li>An original statement from a U.S. consular officer verifying that you are a U.S. citizen with a valid passport.</li></ul></li><li>Evidence of family relationship, such as a final adoption decree;</li><li>Evidence you have had legal custody of the adopted child for two years; and</li><li>Evidence you have had joint residence with the adopted child for two years</li></ul></div><div class="accordion__header" tabindex="0">
+            Special Instructions
+          </div><div class="accordion__panel"><ul><li>You must file a separate Form I-130 for each eligible relative, unless they can be considered a derivative beneficiary. See the form instructions for more information.</li><li>If you submit a petition for your spouse, you must also submit Form I-130A, Supplemental Information for Spouse Beneficiary.</li><li>To <strong>receive an email or text message</strong> when we accept your form, complete <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e8ef63d8-a07f-41dd-af65-c5d688a65722" href="/g-1145">Form G-1145, E-Notification of Application/Petition Acceptance</a> and clip it to the front of the petition.</li><li>Do not include:
+	<ul><li> Anything that contains electronic chips and batteries (such as musical greeting cards) or any non-paper materials such as CD-ROMS, DVDs, toys, action figures, or thumb drives. We will not accept these types of materials. However, we will accept photographs or copies of these items. </li><li>Any biological or genetic samples as DNA evidence. For information on DNA testing and submitting DNA samples, please visit the <a href="http://travel.state.gov/content/travel/en/legal/travel-legal-considerations/us-citizenship/US-Citizenship-DNA-Testing.html">Department of State’s page</a>.</li><li>Graphic photos of childbirth or intimate relations as evidence of a relationship or marriage.</li></ul></li></ul><p> </p><p>You must submit a separate Form I-130 for each child if:</p><ul><li>The relative you are applying for is your spouse;</li><li>Together you have biological children, stepchildren, or  <a href="/node/42133">adopted children</a>, and</li><li>You did not file separate petitions for them.</li></ul><p>When you submit their forms, you must include:</p><ul><li>Evidence of your U.S. citizenship, such as a photocopy of your naturalization certificate or your U.S. passport; and</li><li>A photocopy of your original Form I-130 receipt notice.</li></ul><p><strong>What if I submitted a petition for a relative when I was a permanent resident, but I am now a U.S. citizen?</strong></p><p>If you become a U.S. citizen while your relative is waiting for a visa, you can upgrade your relative’s visa classification by notifying USCIS or the Department of State of your naturalization. If you are a U.S. citizen, your spouse and unmarried children under 21 will have immigrant visas immediately available to them.</p><table class="dataTable"><thead><tr><th scope="col"><strong>If you become a U.S. citizen</strong></th><th scope="col"><strong>You should notify:</strong></th><th scope="col"><strong>Mail your notification to:</strong></th><th scope="col"><strong>And include:</strong></th></tr></thead><tbody><tr><td><strong>Before</strong> we make a decision on your Form I-130</td><td>the USCIS office that is processing your case.</td><td>The office address printed on your Form I-130 receipt notice. This <a href="https://egov.uscis.gov/processing-times/more-info">infographic</a> shows where to find the address on your receipt notice.</td><td><ul><li>A short letter explaining you are now a U.S. citizen</li><li>Photocopies of your:
+				<ul><li>Naturalization certificate; and</li><li>Form I-130 receipt notice</li></ul></li><li>“I-130 Upgrade” on the outside of the envelope.</li></ul></td></tr><tr><td><strong>After</strong> we approve your Form I-130</td><td>the National  Visa Center (NVC)</td><td><p>National Visa Center<br />
+			31 Rochester Ave.<br />
+			Suite 200<br />
+			Portsmouth, NH  03801-2915</p></td><td><ul><li>A short letter explaining you are now a U.S. citizen; and</li><li>Photocopies of your:
+				<ul><li>Naturalization certificate; and</li><li>Form I-130 approval notice</li></ul></li><li>“I-130 Upgrade” on the outside of the envelope.</li></ul><p>For more information, call the NVC at 603-334-0700.</p></td></tr></tbody></table><p> </p></div><div class="accordion__header" tabindex="0">
+            Related Links
+          </div><div class="accordion__panel"><div class="clearfix text-formatted field field--name-field-formatted-long-5 field__item"><ul><li><a data-entity-substitution="media" data-entity-type="media" href="https://www.uscis.gov/sites/default/files/document/guides/A1en.pdf" target="_blank" type="application/pdf; length=704787" data-lang="en">How Do I Help My Relative Become a Permanent Resident? (Guide for U.S. Citizens)<span class="file-info"> (PDF, 688.27 KB)</span></a></li><li><a data-entity-substitution="media" data-entity-type="media" href="https://www.uscis.gov/sites/default/files/document/guides/B1en.pdf" target="_blank" type="application/pdf; length=591235" data-lang="en">How Do I Help My Relative Become a Permanent Resident? (Guide for Permanent Residents)<span class="file-info"> (PDF, 577.38 KB)</span></a></li><li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="decdcd39-1386-4aae-a7f9-b599f4a5876b" href="/forms/all-forms/immigrant-visa-petitions-returned-by-the-state-department-consular-offices">Immigrant Visa Petitions Returned by the State Department Consular Offices</a></li><li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="84e3863d-75fe-4f1a-b8d0-a94e39835f46" href="/i-130-addresses">Direct Filing Addresses for Form I-130, Petition for Alien Relative</a></li><li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="7fb3b0ee-dc8a-45a7-85af-5552f489c2b1" href="/forms/filing-guidance/form-filing-tips">Form Filing Tips</a></li></ul><p><strong>File Online</strong></p><ul><li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="4235a220-100e-455f-8772-87d4e192b0f4" href="/file-online/how-to-create-a-uscis-online-account">How to Create a USCIS Online Account</a></li><li><a data-drupal-link-system-path="node/48028" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="a58c4525-6595-42b0-a838-9201da3a9410" href="/file-online/tips-for-filing-forms-online">Tips for Filing Forms Online</a></li><li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="11adc49b-7624-45d1-bf57-269f9aacf62a" href="/file-online/online-filing-for-attorneys-and-accredited-representatives">Online Filing for Attorneys and Accredited Representatives</a></li></ul></div></div></div>
+  </section>
+        </div>
+      
+                </div>
+  
+  
+    
+            <div class="reviewed-date">
+        <div class="reviewed-date__label">Last Reviewed/Updated:</div>
+                    <div class="field field--name-field-display-date field__item"><time datetime="2021-08-23T11:30:00Z" class="datetime">08/23/2021</time>
+</div>
+            </div>
+      </article>
+
+      </div>
+
+  </div>
+
+                          </div>
+
+                          
+            
+              <div id="modal" class="modal page-modal"><div class="modal-content"><div class="modal-footer title-wrap"><div class="heading"><button id="modal-button" class="close" data-toggle="modal" data-dismiss="modal" aria-label="Close"><i class="fas fa-times" aria-labelledby="modal-button"></i></button><div class="modal-title" data-no-results="No results found." data-load-text="Loading..."></div></div></div><div class="modal-body"></div></div></div>
+          </main>
+        </div>
+      </div>
+
+          </div>
+  </div>
+
+                              
+  <div id="footer">
+    
+<div class="usa-footer-container">
+  <footer class="usa-footer usa-footer--medium" role="contentinfo">
+    <div class="grid-container usa-footer__return-to-top">
+      <a href="#" class="focusable">Return to top</a>
+    </div>
+
+           <div class="usa-footer__primary-section">
+         <div class="grid-container">
+           <div class="grid-row grid-gap ">
+                            <div class="mobile-lg:grid-col-12">
+                 <nav class="usa-footer__nav" aria-label="Footer navigation">
+
+                      <ul class="grid-row grid-gap menu" data-level="0">
+                          <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/topics" class="nav__link usa-footer__primary-link" data-drupal-link-system-path="node/93148">Topics</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/forms/forms" class="nav__link usa-footer__primary-link" title="Forms" data-drupal-link-system-path="node/88393">Forms</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/newsroom" class="nav__link usa-footer__primary-link" title="News" data-drupal-link-system-path="node/4153">Newsroom</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/citizenship" class="nav__link usa-footer__primary-link" title="Citizenship" data-drupal-link-system-path="node/88387">Citizenship</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/green-card" class="nav__link usa-footer__primary-link" title="Green Card" data-drupal-link-system-path="node/42293">Green Card</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/laws-and-policy" class="nav__link usa-footer__primary-link" data-drupal-link-system-path="node/41528">Laws</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/tools" class="nav__link usa-footer__primary-link" title="Tools" data-drupal-link-system-path="node/50433">Tools</a>
+              </li>
+        </ul>
+  
+
+
+
+
+
+                 </nav>
+               </div>
+             
+                     </div>
+
+                    </div>
+       </div>
+    
+              <div class="usa-footer__intermediate-section">
+          <div class="grid-container">
+
+                      <div class="grid-row grid-gap">
+              <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
+                <div class="mobile-lg:grid-col-auto">
+                  <img class="usa-footer__logo-img" src="/sites/default/files/images/site/DHS_cis_W.svg" alt="U.S. Department of Homeland Security Seal, U.S. Citizenship and Immigration Services">
+              </div>
+                              </div>
+                                                              <div class="usa-footer__contact-links mobile-lg:grid-col-6">
+                  <div class="usa-footer__social-links grid-row grid-gap-1">
+                                                                  <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--facebook" href="https://www.facebook.com/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--facebook" role="img" aria-label="Facebook"></span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--twitter" href="https://www.twitter.com/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--twitter" role="img" aria-label="Twitter"></span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--youtube" href="https://www.youtube.com/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--youtube" role="img" aria-label="YouTube"></span>
+                          </a>
+                        </div>
+                                                                                                                                                                            <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--instagram" href="https://www.instagram.com/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--instagram" role="img" aria-label="Instagram"></span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--linkedin" href="https://www.linkedin.com/company/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--linkedin" role="img" aria-label="LinkedIn"></span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--email" href="https://public.govdelivery.com/accounts/USDHSCIS/subscriber/new" target="_blank">
+                            <span class="usa-social-link__icon usa-social-link__icon--email" role="img" aria-label="Email"></span>
+                          </a>
+                        </div>
+                                                            </div>
+
+                  <h3 class="usa-footer__contact-heading">
+                                          <a class="usa-link" href="/about-us/contact-us" >Contact USCIS</a>
+                                      </h3>
+                  <address class="usa-footer__address">
+                    <div class="usa-footer__contact-info grid-row grid-gap">
+                                                                </div>
+                  </address>
+                </div>
+                          </div>
+          
+          </div>
+        </div>
+      
+    <div class="usa-footer__secondary-section">
+      <div class="grid-container">
+        <div class="grid-row grid-gap">
+          <div class="grid-col-9">
+            <section class="usa-identifier__section usa-identifier__section--masthead" aria-label="Agency identifier">
+              <div class="usa-identifier__container">
+                <div class="usa-identifier__logos">
+                  <a href="https://www.dhs.gov" class="usa-identifier__logo">
+                    <img class="usa-identifier__logo-img" src="/themes/contrib/dhs_uswds/logo.svg" alt="Department of Homeland Security Seal">
+                  </a></div>
+                <div class="usa-identifier__identity" aria-label="Agency description">
+                  <p class="usa-identifier__identity-domain">USCIS.gov</p>
+                  <p class="usa-identifier__identity-disclaimer">
+                    An official website of the <a href="https://www.dhs.gov">U.S. Department of Homeland Security</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+                            <div class="region region-footer_secondary">
+    
+
+<nav aria-labelledby="block-uscis-design-footer-menu" id="block-uscis-design-footer" class="usa-identifier__section usa-identifier__section--required-links">
+            
+  <div  class="visually-hidden" id="block-uscis-design-footer-menu">Important links</div>
+  
+
+        <div class="usa-identifier__section usa-identifier__section--required-links">
+  <div class="usa-identifier__container">
+    <ul class="usa-identifier__required-links-list">
+                                                                                                                                <li class="usa-identifier__required-links-item"><a href="/about-us" class="usa-identifier__required-link" title="About USCIS" data-drupal-link-system-path="node/41972">About USCIS</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/website-policies/accessibility" class="usa-identifier__required-link" title="Accessibility" data-drupal-link-system-path="node/42012">Accessibility</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/about-us/budget-planning-and-performance" class="usa-identifier__required-link" title="Budget and Performance" data-drupal-link-system-path="node/42021">Budget and Performance</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/website-policies/dhs-component-websites" class="usa-identifier__required-link" title="DHS Components" data-drupal-link-system-path="node/88438">DHS Components</a>                                                  </li>
+                                    
+                                                                                                                            <li class="usa-identifier__required-links-item"><a href="/records/request-records-through-the-freedom-of-information-act-or-privacy-act" class="usa-identifier__required-link" title="Freedom of Information Act" data-drupal-link-system-path="node/41801">Freedom of Information Act</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/about-us/equal-employment-opportunity/equal-employment-opportunity-data-posted-pursuant-to-the-no-fear-act" class="usa-identifier__required-link" title="No FEAR Act Data" data-drupal-link-system-path="node/42220">No FEAR Act Data</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/website-policies/privacy-and-legal-disclaimers" class="usa-identifier__required-link" title="Privacy and Legal Disclaimers" data-drupal-link-system-path="node/47863">Privacy and Legal Disclaimers</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/sitemap" class="usa-identifier__required-link" title="Site Map" data-drupal-link-system-path="sitemap">Site Map</a>                                                  </li>
+                                    
+                                                                                                                            <li class="usa-identifier__required-links-item"><a href="https://www.oig.dhs.gov/" class="usa-identifier__required-link" title="Office of the Inspector General" data-drupal-link-system-path="node/88447">Office of the Inspector General</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="https://www.whitehouse.gov/" class="usa-identifier__required-link" title="The White House" data-drupal-link-system-path="node/88441">The White House</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="https://www.usa.gov/" class="usa-identifier__required-link" title="USA.gov" data-drupal-link-system-path="node/88450">USA.gov</a>                                                  </li>
+                                    
+                                                
+
+          </ul>
+  </div>
+</div>
+
+  </nav>
+
+
+  </div>
+
+                        <section class="usa-identifier__section usa-identifier__section--usagov" aria-label="U.S. government information and services">
+              <div class="usa-identifier__container">
+                <div class="usa-identifier__usagov-description">Looking for U.S. government information and services?</div>
+                <a href="https://www.usa.gov/" class="usa-link">Visit USA.gov</a>
+              </div>
+            </section>
+          </div>
+          <div class="grid-col-3 ntas-widget">
+            <iframe id="ntas-frame" src="https://www.dhs.gov/ntas/" name="NationalTerrorismAdvisorySystem" title="National Terrorism Advisory System" width="170" height="180" scrolling="no" frameborder="0" seamless border="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+  </div>
+
+    <div class="region region-footer_third">
+      <div id="block-qualtrics">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET--><script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_3WrTsyl9WWQdlxb","https://zn3wrtsyl9wwqdlxb-uscisomnichannel.gov1.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_3WrTsyl9WWQdlxb")).start()}catch(i){}})();
+
+//--><!]]>
+</script><div id="ZN_3WrTsyl9WWQdlxb"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--></div>
+      
+      </div>
+  <div id="block-siteimproveanalyticsscript">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+  /*<![CDATA[*/
+  (function() {
+    var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+    sz.src = '//siteimproveanalytics.com/js/siteanalyze_10709.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+  })();
+  /*]]]]><![CDATA[>*/
+
+//--><!]]>
+</script></div>
+      
+      </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/41208","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"asset_injector\/css\/qualtrics_popup_dialog,asset_injector\/js\/preview_message_bar,classy\/base,classy\/file,classy\/messages,core\/normalize,dhs_uswds\/global,dhs_uswds\/uswds,entity_embed\/caption,extlink\/drupal.extlink,fontawesome\/fontawesome.svg,google_analytics\/google_analytics,moderated_content_bulk_publish\/moderated-content-bulk-publish,system\/base,uscis_design\/alert,uscis_design\/global-styling,uscis_design\/select-component,uscis_design\/views-component,usfedgov_google_analytics\/load-analytics-local-min,uswds\/drupal,views\/views.ajax,views\/views.module","theme":"uscis_design","theme_token":null},"ajaxTrustedUrl":[],"clientside_validation_jquery":{"validate_all_ajax_forms":2,"force_validate_on_blur":false,"messages":{"required":"This field is required.","remote":"Please fix this field.","email":"Please enter a valid email address.","url":"Please enter a valid URL.","date":"Please enter a valid date.","dateISO":"Please enter a valid date (ISO).","number":"Please enter a valid number.","digits":"Please enter only digits.","equalTo":"Please enter the same value again.","maxlength":"Please enter no more than {0} characters.","minlength":"Please enter at least {0} characters.","rangelength":"Please enter a value between {0} and {1} characters long.","range":"Please enter a value between {0} and {1}.","max":"Please enter a value less than or equal to {0}.","min":"Please enter a value greater than or equal to {0}.","step":"Please enter a multiple of {0}."}},"google_analytics":{"account":"UA-12572986-2","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|dmg|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":"\\.gov|\\.mil","extInclude":"web\\.archive\\.org","extCssExclude":".footer-social-media__links,.usa-footer__contact-links","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving an official website of U.S. Citizenship and Immigration Services. Links to non-USCIS sites are provided for the visitor\u2018s convenience and do not represent an endorsement by USCIS of any commercial or private issues, products or services. Note that the privacy policy of the linked site may differ from that of USCIS.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:5ef4a4b5783b9fe9aa635d67a2e12cd45eb2d9c6af8207370eb6e09ff6651cec":{"view_name":"explore_my_options","view_display_id":"block_2","view_args":"3324\/1","view_path":"\/node\/41208","view_base_path":null,"view_dom_id":"5ef4a4b5783b9fe9aa635d67a2e12cd45eb2d9c6af8207370eb6e09ff6651cec","pager_element":0}}},"user":{"uid":0,"permissionsHash":"5d879a3d809c3230ff553c97c0c0b2f0f96bd71fac4206706215a88b6d42f6e7"}}</script>
+<script src="/sites/default/files/js/js_Mv2iF4lrGEp8CVMSME53ogo9CpU0i15uAqOqmX3msKU.js"></script>
+<script src="https://ceciva.uscis.gov/Alme/Scripts/NIT.Launch.min.js" async></script>
+<script src="/sites/default/files/js/js_ntFWXqxVZ5CMjeSJ3SUF2DJIqFqq6FWO3lP0WtGXIwo.js"></script>
+<script src="/modules/baseline/contrib/usfedgov_google_analytics/js/Universal-Federated-Analytics-Min.js?agency=DHS&amp;subagency=USCIS&amp;pua=0&amp;cto=6&amp;v=3.1" id="_fed_an_ua_tag"></script>
+<script src="/sites/default/files/js/js_Do2UkCKkLyBnC-sBDhpQjxaQaxYYJ7yuez14gxVs1zw.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"877b02039c","applicationID":"137833368,979282327","transactionName":"ZFYHMhZSXUpRUkcKDF0cJAUQWlxXH3VBFhNSXzkDCkdaTUluRhACVFY5JQtdR0tfXV8GEW9\/CgUFX2dYQ1pmEAJUViYJCkdBVlxdVhFODVANAwdYclpTVEAQL1xQBAowUkBS","queueTime":0,"applicationTime":885,"atts":"SBEERF5ITkQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
