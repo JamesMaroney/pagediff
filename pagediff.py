@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import re
 from io import BytesIO
 from datetime import datetime
 from urllib.request import urlopen
@@ -16,6 +17,8 @@ cleaner = Cleaner()
 cleaner.javascript = True
 cleaner.style = True
 cleaner.safe_attrs_only = True
+
+re_class_attrs = br'class=".*?"'
 
 def get_capture_path(url):
     return os.path.join(PAGES_DIR, url.lstrip('http://').lstrip('https://'))
@@ -46,7 +49,9 @@ def write_new_state(url, state):
 
 def states_differ(last_state, current_state):
     last_state = lxml.html.tostring(cleaner.clean_html(lxml.html.parse(BytesIO(last_state))))
+    last_state = re.sub(re_class_attrs, b'', last_state)
     current_state = lxml.html.tostring(cleaner.clean_html(lxml.html.parse(BytesIO(current_state))))
+    current_state = re.sub(re_class_attrs, b'', current_state)
     return last_state != current_state
 
 ####### Main script
