@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 import os
-import glob
 from io import BytesIO
 from datetime import datetime
 from urllib.request import urlopen
-from urllib.parse import quote_plus
 
 import lxml
 from lxml.html.clean import Cleaner
@@ -15,8 +13,9 @@ PAGES_DIR=os.path.join(ROOT_DIR, 'pages')
 NOW=datetime.now().strftime("%Y-%b-%d_%H:%M:%S")
 
 cleaner = Cleaner()
-cleaner.javascript = True  # This is True because we want to activate the javascript filter
-cleaner.style = True  # This is True because we want to activate the styles & stylesheet filter
+cleaner.javascript = True
+cleaner.style = True
+cleaner.safe_attrs_only = True
 
 def get_capture_path(url):
     return os.path.join(PAGES_DIR, url.lstrip('http://').lstrip('https://'))
