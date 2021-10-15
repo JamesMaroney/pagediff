@@ -1,3 +1,4 @@
 differences_found
 .idea
 .DS_STORE
+*.staged

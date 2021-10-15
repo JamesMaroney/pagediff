@@ -1,30 +1,19 @@
 #!/usr/bin/env python3
 import os
 import re
-from io import BytesIO
 from pathlib import Path
 from datetime import datetime
 from urllib.request import urlopen
-
-import lxml
-from lxml.html.clean import Cleaner
 
 PAGES_FILE='pages.txt'
 ROOT_DIR=os.getcwd()
 PAGES_DIR=os.path.join(ROOT_DIR, 'pages')
 NOW=datetime.now().strftime("%Y-%b-%d_%H:%M:%S")
 
-cleaner = Cleaner()
-cleaner.javascript = True
-cleaner.style = True
-cleaner.safe_attrs_only = True
-cleaner.kill_tags = ['script', 'noscript', 'style', 'link', 'meta']
-
-re_class_attrs = br'class=".*?"'
-re_whitespace= br'\s+'
+re_publish_time = re.compile(br'<meta property="article:published_time" content="(.*?)" />')
 
 def get_capture_path(url):
-    return os.path.join(PAGES_DIR, url.lstrip('http://').lstrip('https://'))
+    return os.path.join(PAGES_DIR, url.lstrip('http://').lstrip('https://')) + '.html'
 
 def ensure_dir(dir):
   if not os.path.isdir(dir):
@@ -42,22 +31,28 @@ def get_current_url_state(url):
     f = urlopen(url)
     return f.read()
 
-def write_new_state(url, state):
+def write_new_state(url, state, staged=False):
     capture = get_capture_path(url)
+    if staged:
+        capture += '.staged'
     capture_dir = '/'.join(capture.split('/')[:-1])
     ensure_dir(capture_dir)
-    print(f'  >> writing new capture: {capture}')
+    print(f'  >> writing new capture')
     with open(capture, 'wb') as FOUT:
-        FOUT.write(state)
+        FOUT.write(b'<base href="https://www.uscis.gov/" />\n' + state)
+
+def get_publish_time(html):
+    # extracts meta tag value:
+    # <meta property="article:published_time" content="YYYY-MM-DD" />
+    matches = re_publish_time.search(html)
+    if not matches: return b''
+    return matches.group(1)
 
 def states_differ(last_state, current_state):
-    last_state = lxml.html.tostring(cleaner.clean_html(lxml.html.parse(BytesIO(last_state))))
-    last_state = re.sub(re_class_attrs, b'', last_state)
-    last_state = re.sub(re_whitespace, b' ', last_state)
-    current_state = lxml.html.tostring(cleaner.clean_html(lxml.html.parse(BytesIO(current_state))))
-    current_state = re.sub(re_class_attrs, b'', current_state)
-    current_state = re.sub(re_whitespace, b' ', current_state)
-    return last_state != current_state
+    last_publish_dt = get_publish_time(last_state)
+    current_publish_dt = get_publish_time(current_state)
+
+    return last_publish_dt != current_publish_dt
 
 ####### Main script
 
@@ -76,7 +71,8 @@ for url in urls:
     if not last_state or states_differ(last_state, current_state):
         print(f'  >> differences found!')
         Path('differences_found').touch()
+        write_new_state(url, current_state, True)
     else:
         print(f'  >> no appreciable differences')
-    write_new_state(url, current_state)
+        write_new_state(url, current_state, False)
   except: pass
