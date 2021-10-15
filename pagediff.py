@@ -70,7 +70,6 @@ for url in urls:
     current_state = get_current_url_state(url)
     if not last_state or states_differ(last_state, current_state):
         print(f'  >> differences found!')
-        Path('differences_found').touch()
         write_new_state(url, current_state, True)
     else:
         print(f'  >> no appreciable differences')
