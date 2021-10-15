@@ -2,6 +2,7 @@
 import os
 import re
 from io import BytesIO
+from pathlib import Path
 from datetime import datetime
 from urllib.request import urlopen
 
@@ -17,8 +18,10 @@ cleaner = Cleaner()
 cleaner.javascript = True
 cleaner.style = True
 cleaner.safe_attrs_only = True
+cleaner.kill_tags = ['script', 'noscript', 'style', 'link', 'meta']
 
 re_class_attrs = br'class=".*?"'
+re_whitespace= br'\s+'
 
 def get_capture_path(url):
     return os.path.join(PAGES_DIR, url.lstrip('http://').lstrip('https://'))
@@ -50,8 +53,10 @@ def write_new_state(url, state):
 def states_differ(last_state, current_state):
     last_state = lxml.html.tostring(cleaner.clean_html(lxml.html.parse(BytesIO(last_state))))
     last_state = re.sub(re_class_attrs, b'', last_state)
+    last_state = re.sub(re_whitespace, b' ', last_state)
     current_state = lxml.html.tostring(cleaner.clean_html(lxml.html.parse(BytesIO(current_state))))
     current_state = re.sub(re_class_attrs, b'', current_state)
+    current_state = re.sub(re_whitespace, b' ', current_state)
     return last_state != current_state
 
 ####### Main script
@@ -63,10 +68,15 @@ with open(PAGES_FILE) as file:
               if url]
 
 for url in urls:
-  print(f'Handling :: {url}')
-  ensure_dir(PAGES_DIR)
-  last_state = get_last_url_state(url)
-  current_state = get_current_url_state(url)
-  if not last_state or states_differ(last_state, current_state):
-      print(f'  >> differences found!')
-      write_new_state(url, current_state)
+  try:
+    print(f'Handling :: {url}')
+    ensure_dir(PAGES_DIR)
+    last_state = get_last_url_state(url)
+    current_state = get_current_url_state(url)
+    if not last_state or states_differ(last_state, current_state):
+        print(f'  >> differences found!')
+        Path('differences_found').touch()
+    else:
+        print(f'  >> no appreciable differences')
+    write_new_state(url, current_state)
+  except: pass
