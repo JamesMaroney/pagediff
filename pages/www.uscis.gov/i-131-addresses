@@ -13,8 +13,8 @@
 <meta property="og:title" content="Direct Filing Addresses for Form I-131, Application for Travel Document" />
 <meta property="og:description" content="Use the chart below to determine where you must file your" />
 <meta property="og:image" content="https://www.uscis.gov/sites/default/files/images/social-media/OPA-SM_USCISonBlue_FB_1200x627_V1.png" />
-<meta property="article:published_time" content="2021-08-09" />
-<meta property="article:modified_time" content="2021-08-09" />
+<meta property="article:published_time" content="2021-10-15" />
+<meta property="article:modified_time" content="2021-10-15" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:description" content="Use the chart below to determine where you must file your" />
 <meta name="twitter:site" content="@USCIS" />
@@ -384,9 +384,9 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
                                   <div class="clearfix text-formatted field field--name-body field__item"><p>Use the chart below to determine where you must file your <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="190cf238-4e01-4e33-950f-f57dca4bb670" href="/i-131">Form I-131, Application for Travel Document</a>. Applications that are not submitted to the appropriate direct filing address may experience processing delays.</p>
 
 <div data-open-all="true" id="pagebody_accordion">
-<h1 class="cke-active">Abused spouses, children, or parents</h1>
+<h1>Abused spouses, children, or parents</h1>
 
-<div class="cke-visible">
+<div class="cke-hidden">
 <table class="dataTable"><thead><tr><th scope="col">If you are…</th>
 			<th scope="col">Send your form to…</th>
 		</tr></thead><tbody><tr><td>
@@ -419,7 +419,49 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 			<p>Filing your Form I-131 alone, and your Form I-485 receipt notice (<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="a91e8707-bf48-4631-8225-15e6cac50d12" href="/forms/all-forms/form-i-797c-notice-of-action">Form I-797C, Notice of Action</a>):</p>
 
 			<ul><li>Begins with <strong>MSC </strong>(example: MSC1234567890); or</li>
-				<li><strong>Does not have three letters at the beginning </strong>(example: 1234567890)</li>
+				<li><strong>Does not have three letters at the beginning </strong>(example: 1234567890); and </li>
+				<li>You live in:
+				<ul><li>Alaska</li>
+					<li>​​California</li>
+					<li>Commonwealth of the Northern Mariana Islands</li>
+					<li>Connecticut</li>
+					<li>Delaware</li>
+					<li>District of Columbia</li>
+					<li>Florida</li>
+					<li>Georgia</li>
+					<li>Guam</li>
+					<li>Hawaii</li>
+					<li>Illinois</li>
+					<li>Indiana</li>
+					<li>Iowa</li>
+					<li>Kansas</li>
+					<li>Maine</li>
+					<li>Maryland</li>
+					<li>Massachusetts</li>
+					<li>Michigan</li>
+					<li>Minnesota</li>
+					<li>Missouri</li>
+					<li>Nebraska</li>
+					<li>New Hampshire</li>
+					<li>New Jersey</li>
+					<li>New York</li>
+					<li>North Carolina</li>
+					<li>North Dakota</li>
+					<li>Ohio</li>
+					<li>Oregon</li>
+					<li>Pennsylvania</li>
+					<li>Puerto Rico</li>
+					<li>Rhode Island</li>
+					<li>South Carolina</li>
+					<li>South Dakota</li>
+					<li>Texas</li>
+					<li>U.S. Virgin Islands</li>
+					<li>Vermont</li>
+					<li>Virginia</li>
+					<li>Washington</li>
+					<li>West Virginia</li>
+					<li>Wisconsin</li>
+				</ul></li>
 			</ul></td>
 			<td>
 			<p><strong>USCIS Chicago Lockbox</strong></p>
@@ -437,6 +479,48 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 			Attn: AOS (Box 805887)<br />
 			131 S. Dearborn St., 3rd Floor<br />
 			Chicago, IL 60603-5517</p>
+			</td>
+		</tr><tr><td>
+			<p>Filing your Form I-131 alone, and your Form I-485 receipt notice (<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="a91e8707-bf48-4631-8225-15e6cac50d12" href="/forms/all-forms/form-i-797c-notice-of-action">Form I-797C, Notice of Action</a>):</p>
+
+			<ul><li>Begins with <strong>MSC </strong>(example: MSC1234567890); or</li>
+				<li><strong>Does not have three letters at the beginning </strong>(example: 1234567890); and </li>
+				<li>You live in:
+				<ul><li>Alabama</li>
+					<li>Arizona</li>
+					<li>Arkansas</li>
+					<li>Colorado</li>
+					<li>Idaho</li>
+					<li>Kentucky</li>
+					<li>Louisiana</li>
+					<li>Mississippi</li>
+					<li>Montana</li>
+					<li>Nevada</li>
+					<li>New Mexico</li>
+					<li>Oklahoma</li>
+					<li>Tennessee</li>
+					<li>Utah</li>
+					<li>Wyoming<br />
+					 </li>
+				</ul></li>
+			</ul></td>
+			<td>
+			<p><strong>USCIS Phoenix Lockbox</strong></p>
+
+			<p><strong>For U.S. Postal Service (USPS):</strong></p>
+
+			<p>USCIS<br />
+			Attn: AOS<br />
+			P.O. Box 20500<br />
+			Phoenix, AZ 85036-0500</p>
+
+			<p><strong>For FedEx, UPS, and DHL deliveries:</strong></p>
+
+			<p>USCIS<br />
+			Attn: AOS (Box 20500)<br />
+			1820 E. Skyharbor Circle S<br />
+			Suite 100<br />
+			Phoenix, AZ 85034-4850</p>
 			</td>
 		</tr><tr><td>
 			<p>Filing your Form I-131 alone, and your Form I-485 receipt notice (<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="a91e8707-bf48-4631-8225-15e6cac50d12" href="/forms/all-forms/form-i-797c-notice-of-action">Form I-797C, Notice of Action</a>) begins with:</p>
@@ -495,15 +579,15 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 <h1 class="cke-active">Haitian family members</h1>
 
 <div class="cke-visible">
-<table class="dataTable"><thead><tr><th scope="col"><strong>If you are…</strong></th>
-			<th scope="col"><strong>Send your form to the…</strong></th>
-		</tr></thead><tbody><tr><td>
+<table class="dataTable"><thead><tr><th scope="col" style="width: 714px;"><strong>If you are…</strong></th>
+			<th scope="col" style="width: 496px;"><strong>Send your form to the…</strong></th>
+		</tr></thead><tbody><tr><td style="width: 714px;">
 			<p>The dependent spouse or child of:</p>
 
 			<ul><li>Someone who received a Green Card under the Haitian Refugee Immigrant Fairness Act (HRIFA); or</li>
 				<li>Someone who is applying under HRIFA and has a pending Form I-485</li>
 			</ul></td>
-			<td>
+			<td style="width: 496px;">
 			<p><strong>USCIS Dallas Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -521,13 +605,13 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 			Suite 400<br />
 			Lewisville, TX 75067-8003</p>
 			</td>
-		</tr><tr><td>
+		</tr><tr><td style="width: 714px;">
 			<ul><li>Filing under the <strong>HFRP Program</strong>, and you are currently in <strong>removal proceedings</strong> or were previously removed from the United States; or</li>
 				<li>Filing an initial application under the <strong>Haitian Family Reunification Parole (HFRP) Program</strong>, and you need to file for all eligible relatives associated with the Form I-130 at the same time so they can be processed together.
 				<ul><li>For HFRP re-parole requests, refer to the “Humanitarian parole applicants” section. If you were authorized parole under the HFRP Program and you are now filing for an <strong>advance parole travel document</strong> to allow you to return to the United States after temporary foreign travel, file at the Phoenix or Dallas Lockbox as specified in the next row below.</li>
 				</ul></li>
 			</ul></td>
-			<td>
+			<td style="width: 496px;">
 			<p><strong>USCIS Chicago Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -544,7 +628,7 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 			131 S. Dearborn St., 3rd Floor<br />
 			Chicago, IL 60603-5517</p>
 			</td>
-		</tr><tr><td>
+		</tr><tr><td style="width: 714px;">
 			<p>Filing for an <strong>advance parole travel document</strong> to allow you to return to the United States after temporary foreign travel, you were authorized parole under the HFRP Program, and you live in….</p>
 
 			<ul><li>Alaska</li>
@@ -574,7 +658,7 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 				<li>Guam</li>
 				<li>Commonwealth of Northern Mariana Islands</li>
 			</ul></td>
-			<td>
+			<td style="width: 496px;">
 			<p><strong>USCIS Phoenix Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -592,7 +676,7 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 			Suite 100<br />
 			Phoenix, AZ 85034-4850</p>
 			</td>
-		</tr><tr><td>
+		</tr><tr><td style="width: 714px;">
 			<p>Filing for an <strong>advance parole travel document</strong> to allow you to return to the United States after temporary foreign travel, you were authorized parole under the HFRP Program, and you live in….</p>
 
 			<ul><li>Alabama</li>
@@ -625,7 +709,7 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 				<li>Virginia</li>
 				<li>West Virginia</li>
 			</ul></td>
-			<td>
+			<td style="width: 496px;">
 			<p><strong>USCIS Dallas Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -648,14 +732,14 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 <h1 class="cke-active">Cuban family members</h1>
 
 <div class="cke-visible">
-<table class="dataTable"><thead><tr><th scope="col"><strong>If you are…</strong></th>
-			<th scope="col"><strong>Send your form to the…</strong></th>
-		</tr></thead><tbody><tr><td>
+<table class="dataTable"><thead><tr><th scope="col" style="width: 649px;"><strong>If you are…</strong></th>
+			<th scope="col" style="width: 561px;"><strong>Send your form to the…</strong></th>
+		</tr></thead><tbody><tr><td style="width: 649px;">
 			<ul><li>Filing under the <strong>Cuban Family Reunification Parole (CFRP) Program</strong>, and you need to file for all eligible relatives associated with the same underlying approved Form I-130 at the same time so that they can be processed together;</li>
 				<li>Filing under the <strong>CFRP Program</strong>, and you are currently in <strong>removal proceedings </strong>or have been previously removed from the United States; or</li>
 				<li>You are only eligible to apply if you have received an invitation to do so.</li>
 			</ul></td>
-			<td>
+			<td style="width: 561px;">
 			<p><strong>USCIS Chicago Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -677,12 +761,12 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 <div class="accordion__header cke-active" tabindex="0">CNMI Long-Term Residents</div>
 
 <div class="accordion__panel cke-visible">
-<table class="Table dataTable"><thead><tr><th scope="col">If you are…</th>
-			<th scope="col">Send your form to the…</th>
-		</tr></thead><tbody><tr><td>
+<table class="Table dataTable"><thead><tr><th scope="col" style="width: 653px;">If you are…</th>
+			<th scope="col" style="width: 558px;">Send your form to the…</th>
+		</tr></thead><tbody><tr><td style="width: 653px;">
 			<p>A Commonwealth of the Northern Mariana Islands (CNMI) long-term resident seeking advance permission to travel</p>
 			</td>
-			<td>
+			<td style="width: 558px;">
 			<p><strong>USCIS Dallas Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -704,14 +788,14 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 <h1 class="cke-active">Consideration of Deferred Action for Childhood Arrivals</h1>
 
 <div class="cke-visible">
-<table class="dataTable"><thead><tr><th scope="col" style="width: 768px;">If you are…</th>
-			<th scope="col" style="width: 442px;">Send your form to…</th>
-		</tr></thead><tbody><tr><td style="width: 768px;">
+<table class="dataTable"><thead><tr><th scope="col" style="width: 605px;">If you are…</th>
+			<th scope="col" style="width: 605px;">Send your form to…</th>
+		</tr></thead><tbody><tr><td style="width: 605px;">
 			<p>A DACA recipient requesting advance parole based on your grant of DACA*</p>
 
 			<p>*Please note that in compliance with an <a href="https://www.dhs.gov/publication/batalla-vidal-et-al-v-wolf-et-al-and-state-new-york-et-al-v-trump-et-al">order</a> of a United States District Court, effective December 7, 2020, U.S. Citizenship and Immigration Services (USCIS) is accepting applications for advance parole documents based on the terms of the DACA policy prior to September 5, 2017, and in accordance with the Court's December 4, 2020 order. DHS will comply with the order while it remains in effect, but DHS may seek relief from that order.</p>
 			</td>
-			<td style="width: 442px;">
+			<td style="width: 605px;">
 			<p><strong>USCIS Phoenix Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -734,14 +818,14 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 <h1 class="cke-active">Relatives of a Filipino war veteran</h1>
 
 <div class="cke-visible">
-<table class="dataTable"><thead><tr><th scope="col" style="width: 773px;"><strong>If you are…</strong></th>
-			<th scope="col" style="width: 438px;"><strong>Send your form to…</strong></th>
-		</tr></thead><tbody><tr><td style="width: 773px;">
+<table class="dataTable"><thead><tr><th scope="col" style="width: 657px;"><strong>If you are…</strong></th>
+			<th scope="col" style="width: 554px;"><strong>Send your form to…</strong></th>
+		</tr></thead><tbody><tr><td style="width: 657px;">
 			<ul><li>Filing an initial application under the <strong>Filipino World War II Veterans Parole Program (FWVP)</strong>, and you need to file for all eligible relatives associated with the same underlying approved Form I-130 at the same time so that they can be processed together; or</li>
 				<li>Filing under the <strong>FWVP Program</strong>, and you are currently in <strong>removal proceedings</strong> or were previously removed from the United States</li>
 			</ul><p>For FWVP re-parole requests, refer to the “Humanitarian parole applicants” section.</p>
 			</td>
-			<td style="width: 438px;">
+			<td style="width: 554px;">
 			<p><strong>USCIS Chicago Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -763,14 +847,14 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 <h1 class="cke-active">Humanitarian parole applicants</h1>
 
 <div class="cke-visible">
-<table class="dataTable"><thead><tr><th scope="col" style="width: 774px;">If you are…</th>
-			<th scope="col" style="width: 436px;">Send your form to…</th>
-		</tr></thead><tbody><tr><td style="width: 774px;">
+<table class="dataTable"><thead><tr><th scope="col" style="width: 643px;">If you are…</th>
+			<th scope="col" style="width: 567px;">Send your form to…</th>
+		</tr></thead><tbody><tr><td style="width: 643px;">
 			<ul><li>Outside the United States and requesting humanitarian advance parole;</li>
 				<li>Inside the United States with parole authorized from outside of the United States previously by USCIS and requesting re-parole; or</li>
 				<li>Filing for humanitarian parole and you are currently in removal proceedings or have been previously removed or deported from the United States</li>
 			</ul></td>
-			<td style="width: 436px;">
+			<td style="width: 567px;">
 			<p><strong>USCIS Dallas Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -810,24 +894,24 @@ A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__
 <h1 class="cke-active">T or U visa holders</h1>
 
 <div class="cke-visible">
-<table class="dataTable"><thead><tr><th scope="col">If you have a…</th>
-			<th scope="col">Send your form to…</th>
-		</tr></thead><tbody><tr><td>
+<table class="dataTable"><thead><tr><th scope="col" style="width: 734px;">If you have a…</th>
+			<th scope="col" style="width: 476px;">Send your form to…</th>
+		</tr></thead><tbody><tr><td style="width: 734px;">
 			<ul><li>T nonimmigrant visa and you are filing Form I-131 based on an approved <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="ed3301cd-62f3-43bf-bb0b-1bd2a8d18468" href="/i-914">Form I-914, Application for T Nonimmigrant Status</a></li>
 			</ul></td>
-			<td>
+			<td style="width: 476px;">
 			<p>USCIS<br />
 			Vermont Service Center<br />
 			38 River Road<br />
 			Essex Junction, VT 05479-0001</p>
 			</td>
-		</tr><tr><td>
+		</tr><tr><td style="width: 734px;">
 			<p>T or U nonimmigrant visa and you are filing Form I-131:</p>
 
 			<ul><li>Together with <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="6d9a13a3-f3c9-4773-b112-0015c55ae4dd" href="/i-485">Form I-485, Application to Register Permanent Residence or Adjust Status</a>; or</li>
 				<li>Based on a pending Form I-485.</li>
 			</ul></td>
-			<td>
+			<td style="width: 476px;">
 			<p>USCIS<br />
 			Vermont Service Center<br />
 			38 River Road<br />
@@ -949,16 +1033,16 @@ Washington, DC 20529-2295</p>
 <h1 class="cke-active">Temporary Protected Status (TPS) applicants</h1>
 
 <div class="cke-visible">
-<table class="dataTable"><thead><tr><th scope="col">If you are…</th>
-			<th scope="col">Send your form to…</th>
-		</tr></thead><tbody><tr><td>Filing Form I-131 together with a <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="6e5ede40-ee58-46f2-bdb7-4cf72e2c4f51" href="/i-821">Form I-821, Application for Temporary Protected Status</a></td>
-			<td>The address listed for on the <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="3b35b3d2-d4fd-4e0d-9406-12d664f029f0" href="/humanitarian/temporary-protected-status">TPS page</a> for your country</td>
-		</tr><tr><td>
+<table class="dataTable"><thead><tr><th scope="col" style="width: 754px;">If you are…</th>
+			<th scope="col" style="width: 457px;">Send your form to…</th>
+		</tr></thead><tbody><tr><td style="width: 754px;">Filing Form I-131 together with a <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="6e5ede40-ee58-46f2-bdb7-4cf72e2c4f51" href="/i-821">Form I-821, Application for Temporary Protected Status</a></td>
+			<td style="width: 457px;">The address listed for on the <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="3b35b3d2-d4fd-4e0d-9406-12d664f029f0" href="/humanitarian/temporary-protected-status">TPS page</a> for your country</td>
+		</tr><tr><td style="width: 754px;">
 			<p style="margin-bottom:16px">Filing Form I-131 based on a <strong>pending or approved</strong> Form I-821</p>
 
 			<ul><li>You must include a copy of the receipt notice (Form I-797C) showing we accepted or approved your Form I-821.</li>
 			</ul></td>
-			<td>
+			<td style="width: 457px;">
 			<p><strong>USCIS Dallas Lockbox</strong></p>
 
 			<p><strong>For U.S. Postal Service (USPS):</strong></p>
@@ -1114,7 +1198,7 @@ Washington, DC 20529-2295</p>
     
             <div class="reviewed-date">
         <div class="reviewed-date__label">Last Reviewed/Updated:</div>
-                    <div class="field field--name-field-display-date field__item"><time datetime="2021-08-09T08:00:00Z" class="datetime">08/09/2021</time>
+                    <div class="field field--name-field-display-date field__item"><time datetime="2021-10-15T08:00:00Z" class="datetime">10/15/2021</time>
 </div>
             </div>
       </article>
@@ -1367,5 +1451,5 @@ try{(new g(100,"r","QSI_S_ZN_3WrTsyl9WWQdlxb","https://zn3wrtsyl9wwqdlxb-uscisom
 <script src="/modules/baseline/contrib/usfedgov_google_analytics/js/Universal-Federated-Analytics-Min.js?agency=DHS&amp;subagency=USCIS&amp;pua=0&amp;cto=6&amp;v=3.1" id="_fed_an_ua_tag"></script>
 <script src="/sites/default/files/js/js_c0hecns0CAftnzmCOwBYLxRa48pqi1xWMZwQH4JQ1gU.js"></script>
 
-  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"877b02039c","applicationID":"137833368,979282327","transactionName":"ZFYHMhZSXUpRUkcKDF0cJAUQWlxXH3VBFhNSXzkDCkdaTUluRhACVFY5JQtdR0tfXV8GEW9\/CgUFX2dYQ1pmEAJUViYJCkdBVlxdVhFODVANAwdYclpTVEAQL1xQBAowUkBS","queueTime":0,"applicationTime":768,"atts":"SBEERF5ITkQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"877b02039c","applicationID":"137833368,979282327","transactionName":"ZFYHMhZSXUpRUkcKDF0cJAUQWlxXH3VBFhNSXzkDCkdaTUluRhACVFY5JQtdR0tfXV8GEW9\/CgUFX2dYQ1pmEAJUViYJCkdBVlxdVhFODVANAwdYclpTVEAQL1xQBAowUkBS","queueTime":0,"applicationTime":1437,"atts":"SBEERF5ITkQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
