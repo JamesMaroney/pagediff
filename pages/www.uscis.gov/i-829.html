@@ -1,0 +1,734 @@
+<base href="https://www.uscis.gov/" />
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"877b02039c",applicationID:"137833368"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1211.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>
+</noscript><script async src="https://www.googletagmanager.com/gtag/js?id=UA-12572986-2"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-12572986-2", {"groups":"default","anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<link rel="canonical" href="https://www.uscis.gov/i-829" />
+<meta name="description" content="Use this form if you are a conditional permanent resident who obtained status through entrepreneurship and want to remove the conditions on your residence." />
+<meta name="keywords" content="investor, remove conditions, entrepreneur, business, i-829, i 829, i829, 829, form i-829, form i 829, form i829, i-829 form, i 829 form, i829 form, i-829 instructions, i829 instructions, i 829 instructions, instructions for i829, instructions for i-829, instructions for i 829, i829 application form, i-829 application form, i 829 application form, i-829 application, i829 application, i 829 application, i-829 fee, i 829 fee, i829 fee, 1829, 1 829, 1-829" />
+<meta property="og:site_name" content="USCIS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.uscis.gov/i-829" />
+<meta property="og:title" content="Petition by Investor to Remove Conditions on Permanent Resident Status" />
+<meta property="og:description" content="Use this form if you are a conditional permanent resident who obtained status through entrepreneurship and want to remove the conditions on your residence." />
+<meta property="og:image" content="https://www.uscis.gov/sites/default/files/images/social-media/OPA-SM_USCISonBlue_FB_1200x627_V1.png" />
+<meta property="article:published_time" content="2021-09-29" />
+<meta property="article:modified_time" content="2021-09-29" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Use this form if you are a conditional permanent resident who obtained status through entrepreneurship and want to remove the conditions on your residence." />
+<meta name="twitter:site" content="@USCIS" />
+<meta name="twitter:title" content="Petition by Investor to Remove Conditions on Permanent Resident Status" />
+<meta name="twitter:url" content="https://www.uscis.gov/i-829" />
+<meta name="twitter:image" content="https://www.uscis.gov/sites/default/files/images/social-media/OPA-SM_USCISonBlue_TW_1024x512_V1.png" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="en" href="https://www.uscis.gov/i-829" />
+<link rel="alternate" hreflang="es" href="https://www.uscis.gov/es/i-829" />
+<link rel="revision" href="https://www.uscis.gov/i-829" />
+
+    <title>Petition by Investor to Remove Conditions on Permanent Resident Status | USCIS</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_u0lY92IKMiuYp6wrMmEFjNIeaVTxAutanrA3Nzgr1z8.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_RtAbC7Zb3hZtfieFkN1mXa_X_NblZeEmOPlBZo4UACc.css" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_CzQ6gJUtS_Mg2vNBasOgXL8mFWyW6wCFYQ0nG3GDAsk.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css__IOLl001U3964AhtyfAJ1Ey0LJodewm3dyLz9MVOnoo.css" />
+
+    <script src="/libraries/fontawesome/js/all.min.js?v=5.12.0" defer></script>
+
+  </head>
+  <body>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+
+
+
+<div id="page-wrapper">
+  <header id="header">
+        <div class="header__main-skip-nav">
+      <a href="#main-content" class="visually-hidden focusable">Skip to main content</a>
+    </div>
+          <div id="header-first">
+        <div class="content-container">
+            <div class="region region-header_first">
+    
+<div id="block-alertmessage">
+  
+    
+                  <div class="clearfix text-formatted field field--name-body field__item"><div>
+<div class="hidden" id="preview-message">This is the USCIS preview website. Visit <a class="link-decorate" href="https://www.uscis.gov">uscis.gov</a> for the official USCIS site.</div>
+
+<div class="special-msg"><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="c9e523d5-9539-4a0a-b923-0490925df3bc" href="/about-us/uscis-response-to-covid-19">USCIS Response to Coronavirus (COVID-19)</a></div>
+</div>
+</div>
+      
+  </div>
+  </div>
+
+        </div>
+      </div>
+        <div id="header-second">
+      <div class="content-container header__items">
+          <div class="region region-header_second_left">
+      <div id="block-officialsitelanguage">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div id="header-flag">
+<div id="header-flag-img"><img alt="U.S. flag" class="header-flag-icon" src="/sites/default/files/images/site/USFlag-Icon-2x.png" /></div>
+
+<div id="official-text">An official website of the United States government    <a class="link-decorate" href="#" id="us-gov-desc">Here's how you know</a></div>
+</div>
+</div>
+      
+      </div>
+
+  </div>
+
+          <div class="region region-header_second_right">
+      <div class="language-switcher-language-url" id="block-languageswitcher">
+    
+        
+          <div id="alt-lang-link"><span lang="es"><a href="/es/i-829" class="language-link" hreflang="es" data-drupal-link-system-path="node/41212">Español</a></span></div>
+      </div>
+  <div id="block-utilitylinks">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div id="header-util-links"><!--<a class="util-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="7bb50634-6a64-46c8-bf6c-98a08b657c56" href="/node/41573">Contact Us</a>-->
+  <div class="inline-sep header-util-links__sep"><span></span>
+  </div>
+  <a class="util-link last" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="74a4e61d-1c61-4081-9529-7fe905db85d1" href="/tools/multilingual-resource-center"><i class="fal fa-globe" role="presentation"></i> Multilingual Resources</a>
+</div>
+</div>
+      
+      </div>
+
+  </div>
+
+      </div>
+    </div>
+
+          <div id="primary-header">
+        <div class="content-container">
+            <div class="region region-header">
+      <div id="block-howyouknowdescription">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div class="howyouknow-header-block" id="howyouknow-official">
+<div class="howyouknow-header-block__icon"><img alt="Official Government Website" class="howyouknow-header-block__icon__img" src="/sites/default/files/images/site/icon-dot-gov@2x.png" /></div>
+
+<div>
+<p><strong>Official websites use .gov</strong><br />
+A <strong>.gov</strong> website belongs to an official government organization in the United States.</p>
+</div>
+</div>
+
+<div class="howyouknow-header-block" id="howyouknow-secure">
+<div class="howyouknow-header-block__icon"><img alt="Secure Website" class="howyouknow-header-block__icon__img" src="/sites/default/files/images/site/icon-https@2x.png" /></div>
+
+<div>
+<p><strong>Secure .gov websites use HTTPS</strong><br />
+A <strong>lock</strong> ( <svg aria-label="A locked padlock" class="howyouknow__lock-image" role="img" style="height:1.5ex;width:1.21875ex;" viewbox="0 0 52 64" xmlns="http://www.w3.org/2000/svg"><title></title><desc>A locked padlock </desc><path d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z" fill="#000000" fill-rule="evenodd"></path></svg> ) or <strong>https://</strong> means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.</p>
+</div>
+</div>
+</div>
+      
+      </div>
+
+  </div>
+
+        </div>
+      </div>
+    
+    <div id="header-third">
+      <div class="header-third__first menu__closed">
+        <div class="content-container">
+          <div class="menu-toggle menu-toggle--header">
+            <button type="button" class="menu-toggle__link-horizontal highlight-strong" aria-label="Open Menu" data-alt="Close Menu">
+              <i class="fal fa-bars"></i><span class="menu-toggle__text">Menu</span>
+            </button>
+          </div>
+            <div class="region region-header_third_first">
+      <div id="block-uscis-design-branding">
+    
+        
+          <div id="home-logo">
+      <a href="/" rel="home">
+        <img src="/sites/default/files/images/site/DHS_cis_W_1_T.svg" alt="U.S. Department of Homeland Security Seal, U.S. Citizenship and Immigration Services" />
+      </a>
+    </div>
+      
+  </div>
+  <div id="block-searchplaceholder">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div id="site-search">
+    <!-- Google Search box -->
+  <div class="hide-print">
+    <script async="" src="https://cse.google.com/cse.js?cx=a2ef8e2528658124e">
+<!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+    
+//--><!]]]]]]><![CDATA[><![CDATA[>
+
+//--><!]]]]><![CDATA[>
+
+//--><!]]>
+</script><div class="gcse-searchbox-only" data-resultsurl="/search"> 
+    </div>
+  </div>
+  <!--<form accept-charset="UTF-8" action="https://search.uscis.gov/search" id="search-form" method="get" role="search">
+    <input name="utf8" type="hidden" value="✓" /> 
+    <input id="affiliate" name="affiliate" type="hidden" value="uscis_gov" />
+    <div class="input-group">
+      <input autocomplete="off" class="usagov-search-autocomplete ui-autocomplete-input fsrVisible input-group__field" data-lang="en" maxlength="100" name="query" placeholder="Search our Site" title="Search our Site" type="text" />
+      <div class="input-group__btn--icon">
+        <button aria-label="Submit search" class="btn-icon btn--search-submit" id="header-btn-search-submit" type="submit"><i aria-labelledby="header-btn-search-submit" class="far fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>-->
+  <div class="sign-in-link">
+    <div class="inline-sep sign-in-link__sep"><span></span>
+    </div>
+    <div class="sign-in--drop-down__toggle">
+      <div class="sign-in--button">
+        <div class="highlight-strong font-ssp-semibold sign-in--button__text" tabindex="0">Sign In  <i class="fas fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
+    <div class="sign-in--drop-down hidden-desktop">
+      <div class="sign-in__menu-header">Access USCIS online services.
+      </div>
+      <div>
+        <ul class="sign-in-links"><li class="sign-in__menu-item"><a data-entity-substitution="canonical" data-entity-type="node" href="https://my.uscis.gov/authenticate/saml/init" data-lang="en">Sign In</a></li>
+          <li class="sign-in__menu-item"><a data-entity-substitution="canonical" data-entity-type="node" href="https://my.uscis.gov/authenticate/saml/sign_up" data-lang="en">Create Account</a></li>
+        </ul></div>
+    </div>
+  </div>
+</div>
+</div>
+      
+      </div>
+
+  </div>
+
+        </div>
+      </div>
+
+      <div class="content-container header-third__second">
+          <div class="region region-header_third_second">
+      <div id="block-signinlink">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><div class="sign-in-link sign-in-link__mobile"><a class="my-uscis-link font-ssp-semibold" data-entity-substitution="canonical" data-entity-type="node" href="https://my.uscis.gov/authenticate/saml/init" data-lang="en">Sign In </a></div>
+
+<div class="sign-in-link sign-in-link__mobile"><a class="my-uscis-link font-ssp-semibold" data-entity-substitution="canonical" data-entity-type="node" href="https://my.uscis.gov/authenticate/saml/sign_up" data-lang="en">Create Account</a></div>
+</div>
+      
+      </div>
+
+  </div>
+
+      </div>
+
+      <div id="primary-nav">
+          <div class="region region-navigation">
+    <nav aria-labelledby="block-horizontal-menu" id="block-horizontal">
+            
+  <div  class="visually-hidden" id="block-horizontal-menu">Horizontal Menu</div>
+  
+
+        
+
+                      <ul class="menu--horizontal menu" data-level="0">
+                          <li class="menu__item">
+        <a href="/topics" class="nav__link" data-drupal-link-system-path="node/93148">Topics</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/forms/forms" class="nav__link" title="Forms" data-drupal-link-system-path="node/88393">Forms</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/newsroom" class="nav__link" title="News" data-drupal-link-system-path="node/4153">Newsroom</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/citizenship" class="nav__link" title="Citizenship" data-drupal-link-system-path="node/88387">Citizenship</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/green-card" class="nav__link" title="Green Card" data-drupal-link-system-path="node/42293">Green Card</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/laws-and-policy" class="nav__link" data-drupal-link-system-path="node/41528">Laws</a>
+              </li>
+                      <li class="menu__item">
+        <a href="/tools" class="nav__link" title="Tools" data-drupal-link-system-path="node/50433">Tools</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+  <div id="block-mobilemenulinks">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><ul class="mobile-menu-links"><li class="item"><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="7bb50634-6a64-46c8-bf6c-98a08b657c56" href="/about-us/contact-us">Contact us</a></li>
+	<li class="item"><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="74a4e61d-1c61-4081-9529-7fe905db85d1" href="/tools/multilingual-resource-center">Multilingual Resources</a></li>
+	<li class="item"><a href="#" onclick="NITAgent.ShowAgent('GlobalLaunchPoint'); return false;">Ask Emma</a></li>
+</ul></div>
+      
+      </div>
+
+  </div>
+
+      </div>
+    </div>
+  </header>
+
+      
+  
+  <div class="content-container">
+                  <div class="highlighted">  <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+</div>
+            </div>
+
+  <div id="content-wrapper" class="two-col">
+    <div class="content-container">
+              
+      
+              <div id="content-info-first">
+                        <div class="region region-content_info_first">
+    
+  </div>
+
+                  </div>
+      
+              
+      
+      <div class="main-content-wrapper container">
+                              <aside id="sidebar-first" class="hide-print">
+                <div class="region region-sidebar_first">
+    <nav aria-labelledby="block-uscis-design-mainnavigation-menu" id="block-uscis-design-mainnavigation">
+            
+  <div  class="visually-hidden" id="block-uscis-design-mainnavigation-menu">Main navigation</div>
+  
+
+        
+<a href="#main-content" class="visually-hidden focusable">Skip to main content</a>
+
+      <ul class="menu--main leftnav-menu" data-level="0">
+          <li class="menu__item-title leftnav-menu__item leftnav-menu__item--0 has-sub-items" data-id="id33859"><div class="leftnav-menu__link-group leftnav-menu__link-group--title"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms" class="leftnav-menu__link leftnav-menu__title" data-drupal-link-system-path="node/88393">Forms</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button leftnav-menu__link-group-toggle--title hidden-desktop" title="Toggle menu for Forms" aria-controls="id33859" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--1 hidden-mobile hidden-tablet" data-level="1" id="id33859"><li class="leftnav-menu__item leftnav-menu__item--1 leftnav-menu__active-trail" data-id="id12911"><div class="leftnav-menu__active-trail__border"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/all-forms" class="leftnav-menu__link" data-drupal-link-system-path="node/22983">All Forms</a></div></div></div></li><li class="leftnav-menu__item leftnav-menu__item--1" data-id="id33880"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/explore-my-options" class="leftnav-menu__link" data-drupal-link-system-path="node/83278">Explore My Options</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--1 has-sub-items" data-id="id13977"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance" class="leftnav-menu__link" data-drupal-link-system-path="node/43396">Filing Guidance</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button" title="Toggle menu for Filing Guidance" aria-controls="id13977" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--2 hidden" data-level="2" id="id13977"><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25685"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/form-filing-tips" class="leftnav-menu__link" data-drupal-link-system-path="node/44654">Form Filing Tips</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id34153"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-information/forms-by-mail" class="leftnav-menu__link" data-drupal-link-system-path="node/73964">Forms By Mail</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25688"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/how-to-make-an-expedite-request" class="leftnav-menu__link" data-drupal-link-system-path="node/43424">Expedite Request</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id17616"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/preparing-for-your-biometric-services-appointment" class="leftnav-menu__link" data-drupal-link-system-path="node/45471">Preparing for Your Biometric Services Appointment</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id34486"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/addresschange" class="leftnav-menu__link" data-drupal-link-system-path="node/43677">How to Change Your Address</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25697"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/how-to-track-delivery-of-your-green-card-employment-authorization-document-ead-and-travel-document" class="leftnav-menu__link" data-drupal-link-system-path="node/65797">Card Delivery Tracking</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25694"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-guidance/paperwork-reduction-act" class="leftnav-menu__link" data-drupal-link-system-path="node/44858">Paperwork Reduction Act</a></div></div></li></ul></li><li class="leftnav-menu__item leftnav-menu__item--1 has-sub-items" data-id="id13068"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees" class="leftnav-menu__link" data-drupal-link-system-path="node/41953">Filing Fees</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button" title="Toggle menu for Filing Fees" aria-controls="id13068" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--2 hidden" data-level="2" id="id13068"><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id34168"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/g-1055" class="leftnav-menu__link" data-drupal-link-system-path="node/52500">Fee Schedule</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id381"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="https://www.uscis.gov/feecalculator" class="leftnav-menu__link" data-drupal-link-system-path="node/71802">Fee Calculator</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2 has-sub-items" data-id="id20887"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee" class="leftnav-menu__link" data-drupal-link-system-path="node/43798">USCIS Immigrant Fee</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button" title="Toggle menu for USCIS Immigrant Fee" aria-controls="id20887" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--3 hidden" data-level="3" id="id20887"><li class="leftnav-menu__item leftnav-menu__item--3" data-id="id34171"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee/uscis-immigrant-fee-payment-guide" class="leftnav-menu__link" data-drupal-link-system-path="node/48597">USCIS Immigrant Fee Payment Guide</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--3" data-id="id25717"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee/how-to-pay-the-uscis-immigrant-fee" class="leftnav-menu__link" data-drupal-link-system-path="node/47770">How to Pay the USCIS Immigrant Fee</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--3" data-id="id25720"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee/identity-verification-and-the-uscis-immigrant-fee" class="leftnav-menu__link" data-drupal-link-system-path="node/56750">Identity Verification and the USCIS Immigrant Fee</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--3" data-id="id25723"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/uscis-immigrant-fee/immigrant-fee-payment-tips-on-finding-your-a-number-and-dos-case-id" class="leftnav-menu__link" data-drupal-link-system-path="node/47276">Tips on Finding Your A-Number and DOS Case ID</a></div></div></li></ul></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25702"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/forms-processed-at-uscis-lockbox-facilities" class="leftnav-menu__link" data-drupal-link-system-path="node/65609">Forms Processed at USCIS Lockbox Facilities</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25705"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/poverty-guidelines" class="leftnav-menu__link" data-drupal-link-system-path="node/73474">Poverty Guidelines</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25708"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/additional-information-on-filing-a-fee-waiver" class="leftnav-menu__link" data-drupal-link-system-path="node/50963">Fee Waiver Guidance</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25711"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/additional-information-on-filing-a-reduced-fee-request" class="leftnav-menu__link" data-drupal-link-system-path="node/53942">Additional Information on Filing a Reduced Fee Request</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25714"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/filing-fees/pay-with-a-credit-card" class="leftnav-menu__link" data-drupal-link-system-path="node/49829">Pay With a Credit Card</a></div></div></li></ul></li><li class="leftnav-menu__item leftnav-menu__item--1 has-sub-items" data-id="id13074"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-updates" class="leftnav-menu__link" data-drupal-link-system-path="node/50444">Forms Updates</a></div><div class="leftnav-menu__link-group-toggle"><a href="#" class="leftnav-menu__link leftnav-menu__link-group-toggle__button" title="Toggle menu for Forms Updates" aria-controls="id13074" aria-expanded="false" role="button"><i class="fas fa-chevron-down"></i></a></div></div><ul class="leftnav-menu__sub-menu leftnav-menu__sub-menu--2 hidden" data-level="2" id="id13074"><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25726"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-updates/uscis-2d-barcode-requirements" class="leftnav-menu__link" data-drupal-link-system-path="node/46619">2D Barcode Requirements</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id40057"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-updates/lockbox-filing-location-updates" class="leftnav-menu__link" data-drupal-link-system-path="node/93046">Lockbox Filing Location Updates</a></div></div></li><li class="leftnav-menu__item leftnav-menu__item--2" data-id="id25729"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/forms-updates/workload-transfer-updates" class="leftnav-menu__link" data-drupal-link-system-path="node/50889">Workload Transfer Updates</a></div></div></li></ul></li><li class="leftnav-menu__item leftnav-menu__item--1" data-id="id13979"><div class="leftnav-menu__link-group"><div class="leftnav-menu__link-group-anchor"><a href="/forms/department-of-state-ds-and-other-non-uscis-forms" class="leftnav-menu__link" data-drupal-link-system-path="node/46342">Department of State (DS) Forms and Other Non-USCIS Forms</a></div></div></li></ul></li>    
+    </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+            </aside>
+                  
+        <div id="content" class="is-node two-col">
+                        <div class="region region-breadcrumb">
+      <div id="block-uscis-design-breadcrumbs">
+    
+        
+            <nav class="breadcrumb" aria-labelledby="system-breadcrumb">
+    <div id="system-breadcrumb" class="visually-hidden">Breadcrumb</div>
+    <ol class="nav nav--crumbs">
+              <li class="is-link nav__crumb">
+          <a class="link" href="/">Home</a><span class="nav__sep"></span>        </li>
+              <li class="is-link nav__crumb">
+          <a class="link" href="/forms/forms">Forms</a><span class="nav__sep"></span>        </li>
+              <li class="is-link nav__crumb">
+          <a class="link" href="/forms/all-forms">All Forms</a><span class="nav__sep"></span>        </li>
+              <li class="last nav__crumb">
+          <span class="nav__text">Petition by Investor to Remove Conditions on Permanent Resident Status</span>        </li>
+          </ol>
+  </nav>
+
+      </div>
+
+  </div>
+
+          
+          <div id="main-content"></div>
+          <main id="main">
+                          
+            
+            <div id="page-content">
+                                <div class="region region-content">
+      <div id="block-uscis-design-content">
+    
+        
+          
+<article class="node node--type-immigration-form">
+      <div class="container container--main">
+            
+              
+          <h1 class="page-title">
+              I-829, <span>Petition by Investor to Remove Conditions on Permanent Resident Status</span>          </h1>
+        
+      
+                    
+              <div>
+            <div class="content-section">
+                <div class="clearfix text-formatted field field--name-body field__item"><div class="alert-message">
+<div class="messages messages--info">
+<div class="messages__text">
+<p><strong>Alert:</strong> USCIS is seeking to contact certain individuals who filed <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="1658af1f-d026-49a9-ad7a-599bb943540f" href="/i-829">Form I-829</a> so we can schedule a time to collect biometrics information. Please read the following carefully to see if this notice applies to you.</p>
+
+<p>Do you meet the following criteria (see <a href="https://www.govinfo.gov/content/pkg/STATUTE-116/pdf/STATUTE-116-Pg1758.pdf">Sections 11031-34 of Public Law 107–273</a>)?</p>
+
+<ul><li>The Form I-829 petition was filed before Nov. 2, 2002;</li>
+	<li>The Form I-829 petition was based on a <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="4504129f-7a63-4f9d-997d-6ca05b80515d" href="/i-526">Form I-526</a> that was approved between Jan. 1, 1995 and Aug. 31, 1998; and</li>
+	<li>The Form I-829 petition remains pending with USCIS.</li>
+</ul><p>If so, please email <a href="mailto:USCIS.ImmigrantInvestorProgram@uscis.dhs.gov">USCIS.ImmigrantInvestorProgram@uscis.dhs.gov</a> with subject line “Public Law 107-273 Form I-829 Petition.”</p>
+
+<p>In your email to us, provide the following information:</p>
+
+<ul><li>Your legal name;</li>
+	<li>Your physical address;</li>
+	<li>Telephone number(s) where you can be reached; and</li>
+	<li>The receipt number of the Form I-829 that is pending with USCIS.</li>
+</ul><p>USCIS will use this information to contact you and schedule biometrics collection for your Form I-829 at a local <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="67f496d8-2ed6-455e-b2b1-cedddc3821e2" href="/forms/filing-guidance/preparing-for-your-biometric-services-appointment">Application Support Center</a>.</p>
+
+<p>Again, we need to contact you only if all three of the criteria listed at the top of this notice apply to you. If only one or two of the criteria apply, then we do not need to contact you.</p>
+</div>
+</div>
+</div>
+
+<p>Use this form if you are a conditional permanent resident who obtained status through entrepreneurship and want to remove the conditions on your residence.</p>
+</div>
+      
+  </div>    <section class="content-section">
+      <h2>What This Form Can Help You Do</h2>
+      <div>
+        <div class="views-element-container"><div class="content-section--items-list content-section__items-list content-items-list">    <div class="views-row first last"><div class="views-field views-field-title"><span class="field-content"><a href="/forms/explore-my-options/remove-my-conditional-status-based-on-investment" hreflang="en">Remove My Conditional Status Based on Investment</a>
+</span></div></div>
+</div>
+</div>
+
+      </div>
+    </section>
+  
+      <section class="content-section content-items-list files-listing files-listing--icons">
+      <h2>Forms and Document Downloads</h2>
+            <div class="field field--name-field-attached-files field__items">
+              <div class="field__item"><article class="media media--type-document media--view-mode-linked-file">
+  
+                  <div class="field field--name-field-media-file field__item">
+<span class="file file--mime-application-pdf file--application-pdf"> <a href="https://www.uscis.gov/sites/default/files/document/forms/i-829.pdf" type="application/pdf" title="i-829.pdf">Form I-829  <span class="extra-info file-ext-info">(PDF, 670.07 KB)</span></a></span>
+</div>
+      
+  </article>
+</div>
+              <div class="field__item"><article class="media media--type-document media--view-mode-linked-file">
+  
+                  <div class="field field--name-field-media-file field__item">
+<span class="file file--mime-application-pdf file--application-pdf"> <a href="https://www.uscis.gov/sites/default/files/document/forms/i-829instr.pdf" type="application/pdf" title="i-829instr.pdf">Instructions for Form I-829  <span class="extra-info file-ext-info">(PDF, 560.15 KB)</span></a></span>
+</div>
+      
+  </article>
+</div>
+          </div>
+  
+    </section>
+  
+  <section class="content-section">
+    <h2>Form Details</h2>            <div class="accordion content-accordion"><div class="accordion__header" tabindex="0">
+            Edition Date
+          </div><div class="accordion__panel"><div class="views-element-container"><div class="container container--views forms-updates-listing block-2 forms-updates-listing-block_2 js-view-dom-id-3957282514d8efa7aa55c08cfafefa00797d6fd799a3dfe441c6c1200f31e034 hide-view-label"><div class="views-scroll-marker"></div><div class="first last"><p>11/21/19<span class="edition-date-period">.</span>  You can find the edition date at the bottom of the page on the form and instructions.</p></div></div></div><div><div class="clearfix text-formatted field field--name-body field__item"><p>Dates are listed in mm/dd/yy format.</p></div></div></div><div class="accordion__header" tabindex="0">
+            Where to File
+          </div><div class="accordion__panel"><p>USCIS Dallas Lockbox</p><p><strong>U.S. Postal Service (USPS):</strong><br /><br />
+USCIS<br /><span style="font-size:12.0pt;line-height:107%;&#10;font-family:&quot;Source Sans Pro&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;&#10;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#444444;mso-ansi-language:EN-US;&#10;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">Attn: I-829</span><br />
+P.O. Box 650889<br />
+Dallas, TX 75265-0889</p><p><strong>FedEx, UPS, and DHL deliveries:</strong><br /><br />
+USCIS<br />
+Attn: I-829 (Box 650889)<br />
+2501 S. State Hwy. 121 Business<br />
+Suite 400<br />
+Lewisville, TX 75067-8003</p><p><strong>Filing Tips for Form I-829, Petition by Entrepreneur to Remove Conditions on Permanent Resident Status</strong></p><p>Complete <strong>all sections </strong>of the form. We will reject the form if these fields are missing:</p><ul><li>Part 1 – Basis for Petition</li><li>Part 2 – Information About You
+	<ul><li>Family Name</li><li>Alien Registration Number</li><li>Date of Birth</li><li>Date of Admission as a Conditional Permanent Resident</li><li>Mailing Address</li></ul></li><li>Part 3 – Information About Your Current or Former Conditional Permanent Resident Spouse
+	<ul><li>Date of Birth (if applying with you)</li></ul></li><li>Part 4 – Information About Your Children
+	<ul><li>Date of Birth (if applying with you)</li></ul></li></ul><p><strong>Don’t forget to sign your form. </strong>We will reject any unsigned form.</p></div><div class="accordion__header" tabindex="0">
+            Filing Fee
+          </div><div class="accordion__panel"><div class="field field--name-field-form-fee field__item">$3,750.</div><div class="clearfix text-formatted field field--name-field-formatted-long-2 field__item"><p>A biometric services fee of $85 is also required for the petitioners, as well as any current spouse, former conditional permanent resident spouse, or conditional permanent resident children that are included on the petition between 14 and 79 years of age. That means you must submit a separate biometric services fee of $85 for each conditional permanent resident who is applying with you to remove the conditions on their permanent resident status.</p><p>You may pay the fee with a money order, personal check, or cashier’s check. When filing at a USCIS Lockbox facility, you may also <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="a9ae04fe-2d65-4c53-8473-f6f59ae15aff" href="/forms/filing-fees/pay-with-a-credit-card">pay by credit card </a>using <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="5e3d5a4e-a176-4696-984e-46e629ea4ee4" href="/g-1450">Form G-1450, Authorization for Credit Card Transactions</a>. If you pay by check, you must make your check payable to the U.S. Department of Homeland Security. Service centers are not able to process credit card payments.</p><p><strong>When you send a payment, you agree to pay for a government service. Filing and biometric service fees are final and non-refundable, regardless of any action we take on your application, petition, or request, or if you withdraw your request.</strong> Use our <a data-entity-substitution="canonical" data-entity-type="node" href="https://www.uscis.gov/feecalculator" data-lang="en">Fee Calculator</a> to help determine your fee.</p></div></div><div class="accordion__header" tabindex="0">
+            Special Instructions
+          </div><div class="accordion__panel"><p><strong>E-Notification: </strong>If you want to receive an e-mail and/or a text message that your Form I-829 has been accepted at a USCIS Lockbox facility, complete <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e8ef63d8-a07f-41dd-af65-c5d688a65722" href="/g-1145">Form G-1145, E-Notification of Application/Petition Acceptance</a>, and clip it to the first page of your petition.</p></div><div class="accordion__header" tabindex="0">
+            Related Links
+          </div><div class="accordion__panel"><div class="clearfix text-formatted field field--name-field-formatted-long-5 field__item"><ul><li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="7e05af96-88d1-4441-a1d1-ecc6303546f7" href="/forms/filing-guidance/how-to-track-delivery-of-your-green-card-employment-authorization-document-ead-and-travel-document">Card Delivery Tracking</a></li></ul></div></div></div>
+  </section>
+        </div>
+      
+                </div>
+  
+  
+    
+            <div class="reviewed-date">
+        <div class="reviewed-date__label">Last Reviewed/Updated:</div>
+                    <div class="field field--name-field-display-date field__item"><time datetime="2021-09-29T08:00:00Z" class="datetime">09/29/2021</time>
+</div>
+            </div>
+      </article>
+
+      </div>
+
+  </div>
+
+                          </div>
+
+                          
+            
+              <div id="modal" class="modal page-modal"><div class="modal-content"><div class="modal-footer title-wrap"><div class="heading"><button id="modal-button" class="close" data-toggle="modal" data-dismiss="modal" aria-label="Close"><i class="fas fa-times" aria-labelledby="modal-button"></i></button><div class="modal-title" data-no-results="No results found." data-load-text="Loading..."></div></div></div><div class="modal-body"></div></div></div>
+          </main>
+        </div>
+      </div>
+
+          </div>
+  </div>
+
+                              
+  <div id="footer">
+    
+<div class="usa-footer-container">
+  <footer class="usa-footer usa-footer--medium" role="contentinfo">
+    <div class="grid-container usa-footer__return-to-top">
+      <a href="#" class="focusable">Return to top</a>
+    </div>
+
+           <div class="usa-footer__primary-section">
+         <div class="grid-container">
+           <div class="grid-row grid-gap ">
+                                         <div class=" usa-footer__primary-section__menu">
+                 <nav class="usa-footer__nav" aria-label="Footer navigation">
+
+                      <ul class="grid-row grid-gap menu" data-level="0">
+                          <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/topics" class="nav__link usa-footer__primary-link" data-drupal-link-system-path="node/93148">Topics</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/forms/forms" class="nav__link usa-footer__primary-link" title="Forms" data-drupal-link-system-path="node/88393">Forms</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/newsroom" class="nav__link usa-footer__primary-link" title="News" data-drupal-link-system-path="node/4153">Newsroom</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/citizenship" class="nav__link usa-footer__primary-link" title="Citizenship" data-drupal-link-system-path="node/88387">Citizenship</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/green-card" class="nav__link usa-footer__primary-link" title="Green Card" data-drupal-link-system-path="node/42293">Green Card</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/laws-and-policy" class="nav__link usa-footer__primary-link" data-drupal-link-system-path="node/41528">Laws</a>
+              </li>
+                      <li class="menu__item mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+        <a href="/tools" class="nav__link usa-footer__primary-link" title="Tools" data-drupal-link-system-path="node/50433">Tools</a>
+              </li>
+        </ul>
+  
+
+
+
+
+
+                 </nav>
+               </div>
+             
+                     </div>
+                               </div>
+       </div>
+                            
+        <div class="usa-footer__intermediate-section">
+          <div class="grid-container">
+
+                      <div class="grid-row grid-gap">
+              <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
+                <div class="mobile-lg:grid-col-auto">
+                  <img class="usa-footer__logo-img" src="/sites/default/files/images/site/DHS_cis_W.svg" alt="U.S. Department of Homeland Security Seal, U.S. Citizenship and Immigration Services">
+              </div>
+                              </div>
+                                                              <div class="usa-footer__contact-links mobile-lg:grid-col-6">
+                  <div class="usa-footer__social-links grid-row grid-gap-1">
+                                                                  <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--facebook" href="https://www.facebook.com/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--facebook" role="img" aria-label="Facebook"></span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--twitter" href="https://www.twitter.com/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--twitter" role="img" aria-label="Twitter"></span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--youtube" href="https://www.youtube.com/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--youtube" role="img" aria-label="YouTube"></span>
+                          </a>
+                        </div>
+                                                                                                                                                                            <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--instagram" href="https://www.instagram.com/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--instagram" role="img" aria-label="Instagram"></span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--linkedin" href="https://www.linkedin.com/company/uscis">
+                            <span class="usa-social-link__icon usa-social-link__icon--linkedin" role="img" aria-label="LinkedIn"></span>
+                          </a>
+                        </div>
+                                                                                        <div class="grid-col-auto">
+                          <a class="usa-social-link usa-social-link--email" href="https://public.govdelivery.com/accounts/USDHSCIS/subscriber/new" target="_blank">
+                            <span class="usa-social-link__icon usa-social-link__icon--email" role="img" aria-label="Email"></span>
+                          </a>
+                        </div>
+                                                            </div>
+
+                  <h3 class="usa-footer__contact-heading">
+                                          <a class="usa-link" href="/about-us/contact-us" >Contact USCIS</a>
+                                      </h3>
+                  <address class="usa-footer__address">
+                    <div class="usa-footer__contact-info grid-row grid-gap">
+                                                                </div>
+                  </address>
+                </div>
+                          </div>
+          
+          </div>
+        </div>
+      
+    <div class="usa-footer__secondary-section">
+      <div class="grid-container">
+        <div class="grid-row grid-gap">
+          <div class="grid-col-9">
+            <section class="usa-identifier__section usa-identifier__section--masthead" aria-label="Agency identifier">
+              <div class="usa-identifier__container">
+                <div class="usa-identifier__logos">
+                  <a href="https://www.dhs.gov" class="usa-identifier__logo">
+                    <img class="usa-identifier__logo-img" src="/themes/contrib/dhs_uswds/logo.svg" alt="Department of Homeland Security Seal">
+                  </a></div>
+                <div class="usa-identifier__identity" aria-label="Agency description">
+                  <p class="usa-identifier__identity-domain">USCIS.gov</p>
+                  <p class="usa-identifier__identity-disclaimer">
+                    An official website of the <a href="https://www.dhs.gov">U.S. Department of Homeland Security</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+              <div class="region region-footer_secondary">
+    
+
+<nav aria-labelledby="block-uscis-design-footer-menu" id="block-uscis-design-footer" class="usa-identifier__section usa-identifier__section--required-links">
+            
+  <div  class="visually-hidden" id="block-uscis-design-footer-menu">Important links</div>
+  
+
+        <div class="usa-identifier__section usa-identifier__section--required-links">
+  <div class="usa-identifier__container">
+    <ul class="usa-identifier__required-links-list">
+                                                                                                                                <li class="usa-identifier__required-links-item"><a href="/about-us" class="usa-identifier__required-link" title="About USCIS" data-drupal-link-system-path="node/41972">About USCIS</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/website-policies/accessibility" class="usa-identifier__required-link" title="Accessibility" data-drupal-link-system-path="node/42012">Accessibility</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/about-us/budget-planning-and-performance" class="usa-identifier__required-link" title="Budget and Performance" data-drupal-link-system-path="node/42021">Budget and Performance</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/website-policies/dhs-component-websites" class="usa-identifier__required-link" title="DHS Components" data-drupal-link-system-path="node/88438">DHS Components</a>                                                  </li>
+                                    
+                                                                                                                            <li class="usa-identifier__required-links-item"><a href="/records/request-records-through-the-freedom-of-information-act-or-privacy-act" class="usa-identifier__required-link" title="Freedom of Information Act" data-drupal-link-system-path="node/41801">Freedom of Information Act</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/about-us/equal-employment-opportunity/equal-employment-opportunity-data-posted-pursuant-to-the-no-fear-act" class="usa-identifier__required-link" title="No FEAR Act Data" data-drupal-link-system-path="node/42220">No FEAR Act Data</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/website-policies/privacy-and-legal-disclaimers" class="usa-identifier__required-link" title="Privacy and Legal Disclaimers" data-drupal-link-system-path="node/47863">Privacy and Legal Disclaimers</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="/sitemap" class="usa-identifier__required-link" title="Site Map" data-drupal-link-system-path="sitemap">Site Map</a>                                                  </li>
+                                    
+                                                                                                                            <li class="usa-identifier__required-links-item"><a href="https://www.oig.dhs.gov/" class="usa-identifier__required-link" title="Office of the Inspector General" data-drupal-link-system-path="node/88447">Office of the Inspector General</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="https://www.whitehouse.gov/" class="usa-identifier__required-link" title="The White House" data-drupal-link-system-path="node/88441">The White House</a>                                                  </li>
+                                                <li class="usa-identifier__required-links-item"><a href="https://www.usa.gov/" class="usa-identifier__required-link" title="USA.gov" data-drupal-link-system-path="node/88450">USA.gov</a>                                                  </li>
+                                    
+                                                
+
+          </ul>
+  </div>
+</div>
+
+  </nav>
+
+
+  </div>
+
+                        <section class="usa-identifier__section usa-identifier__section--usagov" aria-label="U.S. government information and services">
+              <div class="usa-identifier__container">
+                <div class="usa-identifier__usagov-description">Looking for U.S. government information and services?</div>
+                <a href="https://www.usa.gov/" class="usa-link">Visit USA.gov</a>
+              </div>
+            </section>
+          </div>
+          <div class="grid-col-3 ntas-widget">
+            <iframe id="ntas-frame" src="https://www.dhs.gov/ntas/" name="NationalTerrorismAdvisorySystem" title="National Terrorism Advisory System" width="170" height="180" scrolling="no" frameborder="0" seamless border="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+  </div>
+
+    <div class="region region-footer_third">
+      <div id="block-qualtrics">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET--><script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_3WrTsyl9WWQdlxb","https://zn3wrtsyl9wwqdlxb-uscisomnichannel.gov1.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_3WrTsyl9WWQdlxb")).start()}catch(i){}})();
+
+//--><!]]>
+</script><div id="ZN_3WrTsyl9WWQdlxb"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--></div>
+      
+      </div>
+  <div id="block-siteimproveanalyticsscript">
+    
+        
+                      <div class="clearfix text-formatted field field--name-body field__item"><script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+  /*<![CDATA[*/
+  (function() {
+    var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+    sz.src = '//siteimproveanalytics.com/js/siteanalyze_10709.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+  })();
+  /*]]]]><![CDATA[>*/
+
+//--><!]]>
+</script></div>
+      
+      </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/41212","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"asset_injector\/css\/qualtrics_popup_dialog,asset_injector\/js\/preview_message_bar,classy\/base,classy\/file,classy\/messages,core\/normalize,dhs_uswds\/global,dhs_uswds\/uswds,extlink\/drupal.extlink,fontawesome\/fontawesome.svg,google_analytics\/google_analytics,moderated_content_bulk_publish\/moderated-content-bulk-publish,system\/base,uscis_design\/alert,uscis_design\/global-styling,uscis_design\/select-component,uscis_design\/views-component,usfedgov_google_analytics\/load-analytics-local-min,uswds\/drupal,views\/views.ajax,views\/views.module","theme":"uscis_design","theme_token":null},"ajaxTrustedUrl":[],"clientside_validation_jquery":{"validate_all_ajax_forms":2,"force_validate_on_blur":false,"messages":{"required":"This field is required.","remote":"Please fix this field.","email":"Please enter a valid email address.","url":"Please enter a valid URL.","date":"Please enter a valid date.","dateISO":"Please enter a valid date (ISO).","number":"Please enter a valid number.","digits":"Please enter only digits.","equalTo":"Please enter the same value again.","maxlength":"Please enter no more than {0} characters.","minlength":"Please enter at least {0} characters.","rangelength":"Please enter a value between {0} and {1} characters long.","range":"Please enter a value between {0} and {1}.","max":"Please enter a value less than or equal to {0}.","min":"Please enter a value greater than or equal to {0}.","step":"Please enter a multiple of {0}."}},"google_analytics":{"account":"UA-12572986-2","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|dmg|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":"\\.gov|\\.mil","extInclude":"web\\.archive\\.org","extCssExclude":".footer-social-media__links,.usa-footer__contact-links","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving an official website of U.S. Citizenship and Immigration Services. Links to non-USCIS sites are provided for the visitor\u2018s convenience and do not represent an endorsement by USCIS of any commercial or private issues, products or services. Note that the privacy policy of the linked site may differ from that of USCIS.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:aa8579754caa8455f2654a3b32f52a939fb0f531cc788480cc7738b9591208a7":{"view_name":"explore_my_options","view_display_id":"block_2","view_args":"3602\/1","view_path":"\/node\/41212","view_base_path":null,"view_dom_id":"aa8579754caa8455f2654a3b32f52a939fb0f531cc788480cc7738b9591208a7","pager_element":0}}},"user":{"uid":0,"permissionsHash":"5d879a3d809c3230ff553c97c0c0b2f0f96bd71fac4206706215a88b6d42f6e7"}}</script>
+<script src="/sites/default/files/js/js_FzcxZgWVLjCgVkDdew7jzfUNxxps2W5MTs__L5SY7mo.js"></script>
+<script src="https://ceciva.uscis.gov/Alme/Scripts/NIT.Launch.min.js" async></script>
+<script src="/sites/default/files/js/js_nxfN51AS2S4sDaTjLWNlMkTGPNjf5n5-N7isiaUXdoM.js"></script>
+<script src="/modules/baseline/contrib/usfedgov_google_analytics/js/Universal-Federated-Analytics-Min.js?agency=DHS&amp;subagency=USCIS&amp;pua=0&amp;cto=6&amp;v=3.1" id="_fed_an_ua_tag"></script>
+<script src="/sites/default/files/js/js_jW1Eu9w-RAB17ue2hBqeN1Sw86yKbUlEXS4--O9JA5o.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"877b02039c","applicationID":"137833368,979282327","transactionName":"ZFYHMhZSXUpRUkcKDF0cJAUQWlxXH3VBFhNSXzkIC1dWZXNeXRcRXF8JAxZvfVZUVGUKBkRwCggQQVxVXFRBTl1FWgAR","queueTime":0,"applicationTime":1242,"atts":"SBEERF5ITkQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
