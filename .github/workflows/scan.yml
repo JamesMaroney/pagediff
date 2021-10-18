@@ -39,4 +39,4 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           author_name: Nightly Scan
-          message: 'Important Changes Found! (maybe)'
+          message: 'Important Changes Found! (maybe) @JamesMaroney'
