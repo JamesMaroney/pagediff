@@ -8,38 +8,35 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo content
+      - name: Checkout Repo Content
         uses: actions/checkout@v2
 
-      - name: setup python
+      - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
 
-      - uses: BSFishy/pip-action@v1
+      - name: Install Requirements
+        uses: BSFishy/pip-action@v1
         with:
           requirements: requirements.txt
 
-      - name: execute scan script
+      - name: Scan Pages
         run: |
           python pagediff.py
 
-      - name: Check file existence
-        id: check_files
-        uses: andstor/file-existence-action@v1
-        with:
-          files: "differences_found"
-
-      - name: Commit Appreciable Changes
-        if: steps.check_files.outputs.files_exists == 'true'
-        uses: EndBug/add-and-commit@v7
-        with:
-          author_name: Nightly Scan
-          message: 'Important Changes Found! (maybe)'
-
       - name: Commit Boring Changes
-        if: steps.check_files.outputs.files_exists != 'true'
         uses: EndBug/add-and-commit@v7
         with:
           author_name: Nightly Scan
           message: 'Only Boring Changes Found'
+
+      - name: Commit Staged Important Changes
+        run: |
+          bash move_staged.sh
+
+      - name: Commit Important Changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: Nightly Scan
+          message: 'Important Changes Found! (maybe)'
