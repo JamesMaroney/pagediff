@@ -31,7 +31,7 @@ jobs:
           author_name: Nightly Scan
           message: 'Only Boring Changes Found'
 
-      - name: Commit Staged Important Changes
+      - name: Move Staged Important Changes
         run: |
           bash move_staged.sh
 
