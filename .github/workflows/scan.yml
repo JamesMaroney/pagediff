@@ -2,7 +2,7 @@ name: scan
 on:
   workflow_dispatch:
   schedule:
-    - cron: "18 12 * * *" #runs at 00:18 UTC everyday
+    - cron: "18 12 * * *" #runs at 12:18 UTC everyday
 
 jobs:
   build:
