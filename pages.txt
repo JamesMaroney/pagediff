@@ -55,7 +55,6 @@ https://www.uscis.gov/n-400
 https://www.uscis.gov/n-565
 https://www.uscis.gov/n-600
 https://www.uscis.gov/n-600k
-https://www.uscis.gov/i-191
 https://www.uscis.gov/i-134
 https://www.uscis.gov/i-131a
 https://www.uscis.gov/i-129s
@@ -66,7 +65,6 @@ https://www.uscis.gov/i-129-addresses
 https://www.uscis.gov/i-9
 https://www.uscis.gov/g-1450
 https://www.uscis.gov/i-407
-https://www.uscis.gov/i-192
 https://www.uscis.gov/n-644
 https://www.uscis.gov/n-470
 https://www.uscis.gov/i-929
