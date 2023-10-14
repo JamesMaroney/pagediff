@@ -1,9 +1,6 @@
 name: scan
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "18 12 * * *" #runs at 12:18 UTC everyday
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
